@@ -465,6 +465,13 @@
         "name": "sprites\\toolsprites\\increase_anxiety.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "fonts/Atkinson-Hyperlegible-Regular-102.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -560,7 +567,7 @@
             "fontSize": 75,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -781,6 +788,9 @@
             },
             {
               "name": "hard"
+            },
+            {
+              "name": "credits"
             }
           ]
         }
@@ -1224,7 +1234,7 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1241,7 +1251,7 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1258,7 +1268,7 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1275,7 +1285,7 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1309,7 +1319,7 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1522,7 +1532,34 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "credits",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 2,
+              "type": "AnchorBehavior::AnchorBehavior"
+            }
+          ],
+          "content": {
+            "text": "Credits",
+            "opacity": 255,
+            "fontSize": 40,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1653,6 +1690,14 @@
                 "",
                 ""
               ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
               "subInstructions": []
             }
           ],
@@ -2090,6 +2135,52 @@
             {
               "type": {
                 "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "credits",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "difficulty",
+                "\"Credits\"",
+                "2"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
                 "value": "VarScene"
               },
               "parameters": [
@@ -2216,6 +2307,14 @@
                 "=",
                 "2"
               ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
               "subInstructions": []
             }
           ],
@@ -2370,6 +2469,20 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "credits",
+                "1725",
+                "990",
+                ""
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -2445,7 +2558,7 @@
         "gridWidth": 48,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.6799999999999999
+        "zoomFactor": 0.5799999999999998
       },
       "objectsGroups": [
         {
@@ -2739,8 +2852,8 @@
           "name": "FastPathNPC",
           "persistentUuid": "68b67213-79bd-494b-9a0b-2542c868657e",
           "width": 0,
-          "x": 836,
-          "y": 249,
+          "x": 864,
+          "y": 192,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -3381,14 +3494,24 @@
           "tags": "",
           "type": "BBText::BBText",
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior"
+            }
+          ],
           "content": {
             "text": "Draw tool sprites:",
             "opacity": 255,
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -3399,6 +3522,15 @@
           "type": "PrimitiveDrawing::Drawer",
           "variables": [],
           "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior"
+            },
             {
               "name": "Checkbox",
               "type": "Checkbox::Checkbox",
@@ -3811,8 +3943,8 @@
           "name": "point_entity",
           "persistentUuid": "3e7bdf84-b827-4d1c-a1af-6617f97d44b9",
           "width": 0,
-          "x": 768,
-          "y": 416,
+          "x": 928,
+          "y": 544,
           "zOrder": 1,
           "numberProperties": [
             {
@@ -3912,8 +4044,8 @@
           "name": "selected",
           "persistentUuid": "3e762d96-e7be-41f6-81da-f4f372079e5d",
           "width": 0,
-          "x": 768,
-          "y": 416,
+          "x": 928,
+          "y": 544,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -5629,6 +5761,178 @@
           "type": "AnchorBehavior::AnchorBehavior"
         }
       ]
+    },
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Credits",
+      "name": "Credits",
+      "oglFOV": 90,
+      "oglZFar": 500,
+      "oglZNear": 1,
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridWidth": 32,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.49999999999999956
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 775,
+          "layer": "",
+          "locked": false,
+          "name": "credits",
+          "persistentUuid": "af107f2e-5257-4f27-8249-11f6d9b6e39f",
+          "width": 1877,
+          "x": 23,
+          "y": 22,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "back",
+          "persistentUuid": "57a26537-0efc-4b36-a65a-6609d27dacdf",
+          "width": 0,
+          "x": 32,
+          "y": 1017,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "name": "credits",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "[b]Credits:[/b]\nProgramming:\nAstronaronic\n\nGraphics:\nAstronaronic\nKenney (kenney.nl)\n\nFont:\nCopyright © 2020, Braille Institute of America, Inc., https://www.brailleinstitute.org/freefont with\nReserved Typeface Name Atkinson Hyperlegible Font.\nFor font EULA, see fonts folder in source files.",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "back",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "[b]<-- BACK[/b]",
+            "opacity": 255,
+            "fontSize": 40,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "back",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "difficulty",
+                "\"Menu\"",
+                "2"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
     }
   ],
   "externalEvents": [
@@ -6173,7 +6477,7 @@
               "colorR": 74,
               "creationTime": 0,
               "disabled": false,
-              "folded": true,
+              "folded": false,
               "name": "Fast speed NPC pathfinding",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
