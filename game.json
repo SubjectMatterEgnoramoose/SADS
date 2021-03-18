@@ -15,7 +15,7 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "useExternalSourceFiles": false,
-    "version": "0.0.1",
+    "version": "0.0.3",
     "name": "SADS",
     "author": "Astronaronic/Spiffy",
     "windowWidth": 1920,
@@ -31,7 +31,7 @@
       "android-icon-48": "android-icon-48.png",
       "android-icon-72": "android-icon-72.png",
       "android-icon-96": "android-icon-96.png",
-      "desktop-icon-512": "desktop-icon-512.png",
+      "desktop-icon-512": "sads_logo_1024.png",
       "ios-icon-100": "ios-icon-100.png",
       "ios-icon-1024": "ios-icon-1024.png",
       "ios-icon-114": "ios-icon-114.png",
@@ -126,48 +126,12 @@
     "resources": [
       {
         "alwaysLoaded": false,
-        "file": "sprites/Man Blue/manBlue_stand.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\Man Blue\\manBlue_stand.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "AnxietyBar-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "AnxietyBar-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "Enemy-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Enemy-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "sprites/toolsprites/player_start.png",
         "kind": "image",
         "metadata": "",
         "name": "sprites\\toolsprites\\player_start.png",
         "smoothed": true,
         "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/toolsprites/toolsclip.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\toolsprites\\toolsclip.png",
-        "smoothed": true,
-        "userAdded": true
       },
       {
         "alwaysLoaded": false,
@@ -222,15 +186,6 @@
         "name": "difficulty-1.png",
         "smoothed": true,
         "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "backbutton-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "backbutton-1.png",
-        "smoothed": true,
-        "userAdded": false
       },
       {
         "alwaysLoaded": false,
@@ -333,15 +288,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "selected-1-0.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "selected-1-0.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "selected-1-1.png",
         "kind": "image",
         "metadata": "",
@@ -387,60 +333,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "sprites/UI/campaign_idle.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\campaign_idle.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/campaign_selected.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\campaign_selected.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/campaign_black.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\campaign_black.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/tabs_selected.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\tabs_selected.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/freeplay_idle.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\freeplay_idle.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/editor_idle.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\editor_idle.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "mondaybutton-1.png",
         "kind": "image",
         "metadata": "",
@@ -477,15 +369,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "sprites/toolsprites/clip.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\toolsprites\\clip.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "sprites/toolsprites/increase_anxiety.png",
         "kind": "image",
         "metadata": "",
@@ -502,249 +385,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "sads_logo.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sads_logo.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "desktop-icon-512.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "desktop-icon-512.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "android-icon-192.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "android-icon-192.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "android-icon-144.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "android-icon-144.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "android-icon-96.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "android-icon-96.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "android-icon-72.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "android-icon-72.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "android-icon-48.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "android-icon-48.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "android-icon-36.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "android-icon-36.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-1024.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-1024.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-180.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-180.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-167.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-167.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-152.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-152.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-144.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-144.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-120.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-120.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-114.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-114.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-100.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-100.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-87.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-87.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-80.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-80.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-76.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-76.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-72.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-72.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-60.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-60.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-58.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-58.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-57.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-57.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-50.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-50.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-40.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-40.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-29.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-29.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "ios-icon-20.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "ios-icon-20.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "sprites/toolsprites/z_order_up.png",
         "kind": "image",
         "metadata": "",
@@ -758,24 +398,6 @@
         "kind": "image",
         "metadata": "",
         "name": "sprites\\toolsprites\\z_order_down.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "firstfloor-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "firstfloor-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "firstfloor-1-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "firstfloor-1-1.png",
         "smoothed": true,
         "userAdded": true
       },
@@ -814,6 +436,40 @@
         "name": "sprites\\toolsprites\\clip_floor_two.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sads_logo_1024.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sads_logo_1024.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "fonts/Atkinson-Hyperlegible-Bold-102.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "fonts\\Atkinson-Hyperlegible-Bold-102.ttf",
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/clip.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\clip.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/UI/anxietybar_bg.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\UI\\anxietybar_bg.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -834,6 +490,9 @@
         },
         {
           "name": "reloadscene"
+        },
+        {
+          "name": "mainmenu"
         }
       ]
     }
@@ -872,7 +531,7 @@
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "",
+      "title": "Splashscreen",
       "v": 209,
       "uiSettings": {
         "grid": false,
@@ -2898,10 +2557,10 @@
       "r": 125,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "",
+      "title": "Testing Area",
       "v": 125,
       "uiSettings": {
-        "grid": true,
+        "grid": false,
         "gridB": 255,
         "gridG": 180,
         "gridHeight": 48,
@@ -2909,9 +2568,9 @@
         "gridOffsetY": 0,
         "gridR": 158,
         "gridWidth": 48,
-        "snap": true,
+        "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.5599999999999996
+        "zoomFactor": 0.4599999999999995
       },
       "objectsGroups": [
         {
@@ -2940,6 +2599,9 @@
             },
             {
               "name": "clip_2nd_floor"
+            },
+            {
+              "name": "clip_both"
             }
           ]
         }
@@ -3017,22 +2679,6 @@
           "x": 816,
           "y": 432,
           "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "3c039365-bd64-446a-8ba2-3f6ca414238d",
-          "width": 96,
-          "x": 1344,
-          "y": 672,
-          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3232,7 +2878,7 @@
           "width": 0,
           "x": 48,
           "y": 1010,
-          "zOrder": 12,
+          "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3336,15 +2982,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 48,
+          "height": 144,
           "layer": "",
           "locked": false,
           "name": "clip_1st_floor",
           "persistentUuid": "c98e12d4-5328-4f68-a15b-214c553cfd23",
-          "width": 96,
-          "x": 1344,
+          "width": 48,
+          "x": 1440,
           "y": 576,
-          "zOrder": 4,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3428,6 +3074,54 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_both",
+          "persistentUuid": "142077d6-cfcf-44ff-b789-5acf67c7fd2a",
+          "width": 96,
+          "x": 1344,
+          "y": 672,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_both",
+          "persistentUuid": "f5f2a844-0e92-4b46-bdb1-318276780594",
+          "width": 96,
+          "x": 1344,
+          "y": 576,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "locked": false,
+          "name": "anxietybar_bg",
+          "persistentUuid": "29cc66f1-a2cf-434b-bf49-64f100bf0bf3",
+          "width": 0,
+          "x": 43,
+          "y": 1003,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -3455,10 +3149,10 @@
           ],
           "behaviors": [
             {
-              "cost": 2,
-              "impassable": true,
               "name": "PathfindingObstacle",
-              "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
             }
           ],
           "animations": [
@@ -4032,6 +3726,16 @@
           ]
         },
         {
+          "height": 48,
+          "name": "clip_both",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\clip.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
           "name": "PathNPCDestination",
           "tags": "",
           "type": "Sprite",
@@ -4081,7 +3785,17 @@
           "tags": "",
           "type": "BBText::BBText",
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 1,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 2,
+              "type": "AnchorBehavior::AnchorBehavior"
+            }
+          ],
           "content": {
             "text": "Anxiety: ",
             "opacity": 255,
@@ -4200,6 +3914,15 @@
           "type": "PrimitiveDrawing::Drawer",
           "variables": [],
           "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior"
+            },
             {
               "name": "Checkbox",
               "type": "Checkbox::Checkbox",
@@ -4332,6 +4055,82 @@
             {
               "name": "Tween",
               "type": "Tween::TweenBehavior"
+            }
+          ]
+        },
+        {
+          "name": "mainmenu",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 1,
+              "type": "AnchorBehavior::AnchorBehavior"
+            }
+          ],
+          "content": {
+            "text": "Main Menu",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Bold-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "anxietybar_bg",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 1,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 2,
+              "type": "AnchorBehavior::AnchorBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "sprites\\UI\\anxietybar_bg.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -4547,7 +4346,7 @@
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "",
+      "title": "SADS Editor",
       "v": 209,
       "uiSettings": {
         "grid": true,
@@ -6410,7 +6209,7 @@
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "",
+      "title": "Credits",
       "v": 209,
       "uiSettings": {
         "grid": false,
@@ -8353,6 +8152,52 @@
             {
               "type": {
                 "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "mainmenu",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Menu\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
                 "value": "VarGlobal"
               },
               "parameters": [
@@ -9158,10 +9003,58 @@
               },
               "parameters": [
                 "Player",
+                "clip_both",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SeparateFromObjects"
+              },
+              "parameters": [
+                "Player",
+                "clip_both",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
                 "clip_1st_floor",
                 "",
                 "",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Plan"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "1"
               ],
               "subInstructions": []
             }
@@ -16613,8 +16506,8 @@
           "name": "reloadscene",
           "persistentUuid": "66107326-43ca-4068-b0b2-fe87c2429131",
           "width": 0,
-          "x": 1805,
-          "y": 255,
+          "x": 1709,
+          "y": 247,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -16635,6 +16528,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 68,
+          "layer": "Debug Layer",
+          "locked": false,
+          "name": "mainmenu",
+          "persistentUuid": "a65b08b8-7348-4d81-9b47-1aceb6e369c5",
+          "width": 268,
+          "x": 1523,
+          "y": 350,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "editionSettings": {
@@ -16648,7 +16557,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.5199999999999996
+        "zoomFactor": 0.47999999999999954
       }
     }
   ],
