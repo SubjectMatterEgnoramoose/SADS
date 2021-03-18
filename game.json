@@ -470,12 +470,74 @@
         "name": "sprites\\UI\\anxietybar_bg.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cursor-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cursor-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cursor-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cursor-1-0.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
   },
   "objects": [],
   "objectsGroups": [
+    {
+      "name": "Options",
+      "objects": [
+        {
+          "name": "resolution"
+        },
+        {
+          "name": "HD"
+        },
+        {
+          "name": "FHD"
+        },
+        {
+          "name": "fullscreentext"
+        },
+        {
+          "name": "fullscreenoff"
+        },
+        {
+          "name": "fullscreenon"
+        },
+        {
+          "name": "difficulty"
+        },
+        {
+          "name": "easy"
+        },
+        {
+          "name": "medium"
+        },
+        {
+          "name": "hard"
+        },
+        {
+          "name": "credits"
+        },
+        {
+          "name": "mouseCameratext"
+        },
+        {
+          "name": "mouseCameracheckbox"
+        }
+      ]
+    },
     {
       "name": "DebugUI",
       "objects": [
@@ -517,6 +579,26 @@
       "name": "showCursor",
       "type": "string",
       "value": "1"
+    },
+    {
+      "name": "enableOptions",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "isPaused",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "useKeyboard",
+      "type": "string",
+      "value": "1"
+    },
+    {
+      "name": "mouseCamera",
+      "type": "string",
+      "value": "0"
     }
   ],
   "layouts": [
@@ -767,44 +849,6 @@
         {
           "name": "Freeplay",
           "objects": []
-        },
-        {
-          "name": "Options",
-          "objects": [
-            {
-              "name": "resolution"
-            },
-            {
-              "name": "HD"
-            },
-            {
-              "name": "FHD"
-            },
-            {
-              "name": "fullscreentext"
-            },
-            {
-              "name": "fullscreenoff"
-            },
-            {
-              "name": "fullscreenon"
-            },
-            {
-              "name": "difficulty"
-            },
-            {
-              "name": "easy"
-            },
-            {
-              "name": "medium"
-            },
-            {
-              "name": "hard"
-            },
-            {
-              "name": "credits"
-            }
-          ]
         }
       ],
       "variables": [
@@ -1314,7 +1358,7 @@
             "fontSize": 50,
             "visible": true,
             "color": "#000000",
-            "fontFamily": "Arial",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
             "align": "left",
             "wordWrap": true
           }
@@ -1575,9 +1619,106 @@
             "align": "left",
             "wordWrap": true
           }
+        },
+        {
+          "name": "mouseCameratext",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "Enable mouse camera: ",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "mouseCameracheckbox",
+          "tags": "",
+          "type": "PrimitiveDrawing::Drawer",
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Checkbox",
+              "type": "Checkbox::Checkbox",
+              "Checked": false,
+              "PrimaryColor": "24;119;211",
+              "SecondaryColor": "255;255;255",
+              "SideLength": 24,
+              "LineWidth": 5,
+              "HaloRadius": 0,
+              "ToggleChanged": false,
+              "Disabled": false,
+              "BorderThickness": 2,
+              "HaloOpacityHover": 64,
+              "HaloOpacityPressed": 96
+            }
+          ],
+          "fillOpacity": 255,
+          "outlineSize": 1,
+          "outlineOpacity": 255,
+          "fillColor": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "outlineColor": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "absoluteCoordinates": false,
+          "clearBetweenFrames": true
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "OptionsEvents"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"Options\"",
+                "0",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
         {
           "disabled": false,
           "folded": false,
@@ -1901,284 +2042,8 @@
               },
               "parameters": [
                 "selectedtab",
-                "\"Main\"",
+                "\"Briefing\"",
                 "yes"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "fullscreenon",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetFullScreen"
-              },
-              "parameters": [
-                "selectedtab",
-                "yes",
-                "yes"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "fullscreenoff",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetFullScreen"
-              },
-              "parameters": [
-                "selectedtab",
-                "no",
-                "yes"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "easy",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "difficulty",
-                "=",
-                "0"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "medium",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "difficulty",
-                "=",
-                "1"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "hard",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "difficulty",
-                "=",
-                "2"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "credits",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Scene"
-              },
-              "parameters": [
-                "difficulty",
-                "\"Credits\"",
-                "2"
               ],
               "subInstructions": []
             }
@@ -2249,11 +2114,23 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "HideLayer"
               },
               "parameters": [
-                "Options",
-                ""
+                "",
+                "\"Options\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "enableOptions",
+                "=",
+                "0"
               ],
               "subInstructions": []
             }
@@ -2293,11 +2170,23 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Delete"
+                "value": "HideLayer"
               },
               "parameters": [
-                "Options",
-                ""
+                "",
+                "\"Options\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "enableOptions",
+                "=",
+                "0"
               ],
               "subInstructions": []
             }
@@ -2320,14 +2209,6 @@
                 "2"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": [],
-              "subInstructions": []
             }
           ],
           "actions": [
@@ -2345,154 +2226,23 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Create"
+                "value": "ShowLayer"
               },
               "parameters": [
                 "",
-                "resolution",
-                "500",
-                "400",
-                ""
+                "\"Options\""
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "Create"
+                "value": "ModVarGlobal"
               },
               "parameters": [
-                "",
-                "FHD",
-                "800",
-                "350",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "HD",
-                "800",
-                "420",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "fullscreentext",
-                "600",
-                "650",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "fullscreenon",
-                "900",
-                "600",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "fullscreenoff",
-                "900",
-                "700",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "difficulty",
-                "1500",
-                "350",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "easy",
-                "1500",
-                "400",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "medium",
-                "1500",
-                "450",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "hard",
-                "1500",
-                "500",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "credits",
-                "1725",
-                "990",
-                ""
+                "enableOptions",
+                "=",
+                "1"
               ],
               "subInstructions": []
             }
@@ -2533,6 +2283,17 @@
           "visibility": true,
           "cameras": [],
           "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 9849880,
+          "ambientLightColorR": 9833416,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Options",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
@@ -2541,8 +2302,590 @@
           "type": "AnchorBehavior::AnchorBehavior"
         },
         {
+          "name": "Checkbox",
+          "type": "Checkbox::Checkbox"
+        },
+        {
           "name": "Tween",
           "type": "Tween::TweenBehavior"
+        }
+      ]
+    },
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Briefing",
+      "name": "Briefing",
+      "oglFOV": 90,
+      "oglZFar": 500,
+      "oglZNear": 1,
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridWidth": 32,
+        "snap": false,
+        "windowMask": false,
+        "zoomFactor": 0.5799999999999996
+      },
+      "objectsGroups": [],
+      "variables": [
+        {
+          "name": "showSettings",
+          "type": "string",
+          "value": "0"
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "begintext",
+          "persistentUuid": "520a0eb6-3cdf-418f-8806-cfcf99a18edd",
+          "width": 0,
+          "x": 1728,
+          "y": 992,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "backtext",
+          "persistentUuid": "fa624b82-63a8-4283-8501-b3de76fcee18",
+          "width": 0,
+          "x": 32,
+          "y": 992,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "settings",
+          "persistentUuid": "a5577097-efdc-4dc7-a69a-2ec970f63fc1",
+          "width": 0,
+          "x": 1265,
+          "y": 154,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "name": "begintext",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 2
+            }
+          ],
+          "content": {
+            "text": "BEGIN",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Bold-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "backtext",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 1,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 2
+            }
+          ],
+          "content": {
+            "text": "BACK",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Bold-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "settings",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "Settings",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "nosettings",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "No settings here yet",
+            "opacity": 255,
+            "fontSize": 30,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"Options\"",
+                "0",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "begintext",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Main\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "backtext",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Menu\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "settings",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "showSettings",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "nosettings",
+                "1220",
+                "220",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "settings",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Delete"
+              },
+              "parameters": [
+                "nosettings",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": true,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "showSettings",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ShowLayer"
+              },
+              "parameters": [
+                "",
+                "\"Options\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "enableOptions",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": true,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "showSettings",
+                ">=",
+                "2"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "showSettings",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": true,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "showSettings",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"Options\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "enableOptions",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "OptionsEvents"
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 10072096,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Options",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
         }
       ]
     },
@@ -2570,7 +2913,7 @@
         "gridWidth": 48,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.4599999999999995
+        "zoomFactor": 0.6199999999999997
       },
       "objectsGroups": [
         {
@@ -2631,22 +2974,6 @@
           "x": 48,
           "y": 1008,
           "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 96,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "313c210f-3927-46b7-af7a-6ba76e7856d1",
-          "width": 1632,
-          "x": 144,
-          "y": 48,
-          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3122,9 +3449,142 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "5507794c-5f74-44d8-b051-44a82a1a46a4",
+          "width": 1632,
+          "x": 144,
+          "y": 48,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
+        {
+          "name": "Player",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "AnxietyLevel",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "CameraSmoothTime",
+              "type": "string",
+              "value": "0.075"
+            },
+            {
+              "name": "AnxietyMax",
+              "type": "string",
+              "value": "5"
+            }
+          ],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            },
+            {
+              "name": "TopDownMovement",
+              "type": "TopDownMovementBehavior::TopDownMovementBehavior",
+              "acceleration": 2500,
+              "allowDiagonals": true,
+              "angleOffset": 0,
+              "angularMaxSpeed": 1000,
+              "customIsometryAngle": 30,
+              "deceleration": 2500,
+              "ignoreDefaultControls": false,
+              "maxSpeed": 300,
+              "rotateObject": true,
+              "viewpoint": "TopDown"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "sprites\\Man Blue\\manBlue_stand_48x48.png",
+                      "points": [
+                        {
+                          "name": "CameraLook",
+                          "x": 24,
+                          "y": 24
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 24,
+                            "y": 0
+                          },
+                          {
+                            "x": 40,
+                            "y": 8
+                          },
+                          {
+                            "x": 48,
+                            "y": 24
+                          },
+                          {
+                            "x": 40,
+                            "y": 40
+                          },
+                          {
+                            "x": 24,
+                            "y": 48
+                          },
+                          {
+                            "x": 8,
+                            "y": 40
+                          },
+                          {
+                            "x": 0,
+                            "y": 24
+                          },
+                          {
+                            "x": 8,
+                            "y": 8
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "name": "StandingNPC",
           "tags": "",
@@ -3355,117 +3815,6 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "sprites\\Woman Green\\womanGreen_stand_48x48.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 24,
-                            "y": 0
-                          },
-                          {
-                            "x": 40,
-                            "y": 8
-                          },
-                          {
-                            "x": 48,
-                            "y": 24
-                          },
-                          {
-                            "x": 40,
-                            "y": 40
-                          },
-                          {
-                            "x": 24,
-                            "y": 48
-                          },
-                          {
-                            "x": 8,
-                            "y": 40
-                          },
-                          {
-                            "x": 0,
-                            "y": 24
-                          },
-                          {
-                            "x": 8,
-                            "y": 8
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Player",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [
-            {
-              "name": "AnxietyLevel",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "CameraSmoothTime",
-              "type": "string",
-              "value": "0.075"
-            },
-            {
-              "name": "AnxietyMax",
-              "type": "string",
-              "value": "5"
-            }
-          ],
-          "behaviors": [
-            {
-              "name": "PathfindingObstacle",
-              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
-              "cost": 2,
-              "impassable": true
-            },
-            {
-              "name": "TopDownMovement",
-              "type": "TopDownMovementBehavior::TopDownMovementBehavior",
-              "acceleration": 2500,
-              "allowDiagonals": true,
-              "angleOffset": 0,
-              "angularMaxSpeed": 1000,
-              "customIsometryAngle": 30,
-              "deceleration": 2500,
-              "ignoreDefaultControls": false,
-              "maxSpeed": 300,
-              "rotateObject": true,
-              "viewpoint": "TopDown"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "sprites\\Man Blue\\manBlue_stand_48x48.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -3787,13 +4136,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 1,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 2,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 2
             }
           ],
           "content": {
@@ -3915,13 +4264,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 1,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 1
             },
             {
               "name": "Checkbox",
@@ -4065,13 +4414,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 1,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 1
             }
           ],
           "content": {
@@ -4093,13 +4442,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 1,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 2,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 2
             }
           ],
           "animations": [
@@ -4133,9 +4482,57 @@
               ]
             }
           ]
+        },
+        {
+          "name": "cameraMove",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "cursor",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "cursor-1-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 8,
+                        "y": 8
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "PlayerEvents"
+        },
         {
           "disabled": false,
           "folded": false,
@@ -4162,94 +4559,6 @@
             "includeConfig": 0
           },
           "target": "ToolSprites"
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Tween::AddObjectScaleXTween"
-              },
-              "parameters": [
-                "AnxietyBar",
-                "Tween",
-                "\"anxietyXscale\"",
-                "Player.Variable(AnxietyLevel)",
-                "\"easeInQuad\"",
-                "50",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BBText::SetBBText"
-              },
-              "parameters": [
-                "AnxietyText",
-                "=",
-                "\"Anxiety: \" + ToString(trunc(Player.Variable(AnxietyLevel) * 10)/10)"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Make the anxiety number count up instead of jumping",
-          "comment2": ""
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "VarObjet"
-              },
-              "parameters": [
-                "Player",
-                "AnxietyLevel",
-                ">=",
-                "5"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarObjet"
-              },
-              "parameters": [
-                "Player",
-                "AnxietyLevel",
-                "=",
-                "5"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
         }
       ],
       "layers": [
@@ -6230,7 +6539,7 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 775,
+          "height": 959,
           "layer": "",
           "locked": false,
           "name": "credits",
@@ -6268,7 +6577,7 @@
           "variables": [],
           "behaviors": [],
           "content": {
-            "text": "[b]Credits:[/b]\nProgramming:\nAstronaronic\n\nGraphics:\nAstronaronic\nKenney (kenney.nl)\n\nFont:\nCopyright © 2020, Braille Institute of America, Inc., https://www.brailleinstitute.org/freefont with\nReserved Typeface Name Atkinson Hyperlegible Font.\nFor font EULA, see fonts folder in source files.",
+            "text": "[b]Credits:[/b]\nProgramming:\nAstronaronic\n\nGraphics:\nAstronaronic\nKenney (kenney.nl)\n\nFont:\nCopyright © 2020, Braille Institute of America, Inc., https://www.brailleinstitute.org/freefont with\nReserved Typeface Name Atkinson Hyperlegible Font.\nFor font EULA, see fonts folder in source files.\n\nThanks:\nSilver-Streak, for helping me with problems",
             "opacity": 255,
             "fontSize": 50,
             "visible": true,
@@ -6372,6 +6681,790 @@
     }
   ],
   "externalEvents": [
+    {
+      "associatedLayout": "Main",
+      "lastChangeTimeStamp": 0,
+      "name": "PlayerEvents",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectScaleXTween"
+              },
+              "parameters": [
+                "AnxietyBar",
+                "Tween",
+                "\"anxietyXscale\"",
+                "Player.Variable(AnxietyLevel)",
+                "\"easeInQuad\"",
+                "50",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "AnxietyText",
+                "=",
+                "\"Anxiety: \" + ToString(trunc(Player.Variable(AnxietyLevel) * 10)/10)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Make the anxiety number count up instead of jumping",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "Player",
+                "AnxietyLevel",
+                ">=",
+                "5"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Player",
+                "AnxietyLevel",
+                "=",
+                "5"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "disabled": false,
+          "folded": true,
+          "name": "WASD",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "useKeyboard",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "w"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TopDownMovementBehavior::SimulateUpKey"
+                      },
+                      "parameters": [
+                        "Player",
+                        "TopDownMovement"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "s"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TopDownMovementBehavior::SimulateDownKey"
+                      },
+                      "parameters": [
+                        "Player",
+                        "TopDownMovement"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "a"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TopDownMovementBehavior::SimulateLeftKey"
+                      },
+                      "parameters": [
+                        "Player",
+                        "TopDownMovement"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "d"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "TopDownMovementBehavior::SimulateRightKey"
+                      },
+                      "parameters": [
+                        "Player",
+                        "TopDownMovement"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "TopDownMovementBehavior::IsMoving"
+                      },
+                      "parameters": [
+                        "Player",
+                        "TopDownMovement"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarGlobal"
+                      },
+                      "parameters": [
+                        "isPaused",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardPosition"
+                      },
+                      "parameters": [
+                        "Player",
+                        "MouseX()",
+                        "MouseY()",
+                        "1000",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "disabled": false,
+          "folded": true,
+          "name": "Controller",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Gamepads::C_Controller_X_is_connected"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "useKeyboard",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Gamepads::C_Axis_pushed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"LEFT\"",
+                    "\"UP\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TopDownMovementBehavior::SimulateUpKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Gamepads::C_Axis_pushed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"LEFT\"",
+                    "\"DOWN\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TopDownMovementBehavior::SimulateDownKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Gamepads::C_Axis_pushed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"LEFT\"",
+                    "\"LEFT\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TopDownMovementBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Gamepads::C_Axis_pushed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"LEFT\"",
+                    "\"RIGHT\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TopDownMovementBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "isPaused",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Gamepads::C_Axis_pushed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "\"RIGHT\"",
+                        "\"UP\"",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "270",
+                        "1000",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Gamepads::C_Axis_pushed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "\"RIGHT\"",
+                        "\"DOWN\"",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "90",
+                        "1000",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Gamepads::C_Axis_pushed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "\"RIGHT\"",
+                        "\"RIGHT\"",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "0",
+                        "1000",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Gamepads::C_Axis_pushed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "\"RIGHT\"",
+                        "\"LEFT\"",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardAngle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "180",
+                        "1000",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TopDownMovementBehavior::IsMoving"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "isPaused",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "useKeyboard",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "mouseCamera",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreAutour"
+              },
+              "parameters": [
+                "cameraMove",
+                "Player",
+                "Player.DistanceToPosition(MouseX(), MouseY())*0.25",
+                "Player.AngleToPosition(MouseX(), MouseY())"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "CentreCamera"
+              },
+              "parameters": [
+                "",
+                "cameraMove",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
     {
       "associatedLayout": "Main",
       "lastChangeTimeStamp": 0,
@@ -8140,6 +9233,85 @@
                 "0"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "isPaused",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "useKeyboard",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "cameraMove",
+                "Player.X(\"CameraLook\")",
+                "Player.Y(\"CameraLook\")",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeLayer"
+              },
+              "parameters": [
+                "cameraMove",
+                "\"\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "cameraMove"
+              ],
+              "subInstructions": []
             }
           ],
           "events": []
@@ -8348,10 +9520,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
-                "paused",
+                "isPaused",
                 "+",
                 "1"
               ],
@@ -8614,10 +9786,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "paused",
+                "isPaused",
                 "=",
                 "1"
               ],
@@ -8672,10 +9844,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "paused",
+                "isPaused",
                 ">=",
                 "2"
               ],
@@ -8686,10 +9858,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarGlobal"
               },
               "parameters": [
-                "paused",
+                "isPaused",
                 "=",
                 "0"
               ],
@@ -8742,10 +9914,10 @@
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "paused",
+                "isPaused",
                 "=",
                 "0"
               ],
@@ -9124,9 +10296,1377 @@
           "events": []
         }
       ]
+    },
+    {
+      "associatedLayout": "Menu",
+      "lastChangeTimeStamp": 0,
+      "name": "OptionsEvents",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "enableOptions",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "HD",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetWindowSize"
+                  },
+                  "parameters": [
+                    "",
+                    "1280",
+                    "720",
+                    "no"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetAdaptGameResolutionAtRuntime"
+                  },
+                  "parameters": [
+                    "",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "FHD",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetWindowSize"
+                  },
+                  "parameters": [
+                    "",
+                    "1920",
+                    "1080",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetAdaptGameResolutionAtRuntime"
+                  },
+                  "parameters": [
+                    "",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "fullscreenon",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetFullScreen"
+                  },
+                  "parameters": [
+                    "selectedtab",
+                    "yes",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "fullscreenoff",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetFullScreen"
+                  },
+                  "parameters": [
+                    "selectedtab",
+                    "no",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "easy",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "difficulty",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "medium",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "difficulty",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "hard",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "difficulty",
+                    "=",
+                    "2"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "credits",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "difficulty",
+                    "\"Credits\"",
+                    "2"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Checkbox::Checkbox::IsChecked"
+                  },
+                  "parameters": [
+                    "mouseCameracheckbox",
+                    "Checkbox",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "mouseCamera",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Checkbox::Checkbox::IsChecked"
+                  },
+                  "parameters": [
+                    "mouseCameracheckbox",
+                    "Checkbox",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "mouseCamera",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "mouseCamera",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Checkbox::Checkbox::SetChecked"
+                  },
+                  "parameters": [
+                    "mouseCameracheckbox",
+                    "Checkbox",
+                    "yes",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "mouseCamera",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Checkbox::Checkbox::SetChecked"
+                  },
+                  "parameters": [
+                    "mouseCameracheckbox",
+                    "Checkbox",
+                    "no",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "eventsFunctionsExtensions": [
+    {
+      "author": "Bouh",
+      "description": "Add support for gamepads (or other controllers) to your game, giving access to information such as button presses, axis positions, axis force, trigger pressure, deadzone for each gamepad, etc...\n\nUp to 4 gamepads can be connected: for each condition or expression, you'll have to enter the index of the gamepad to read. This is 1, 2,3 or 4.",
+      "extensionNamespace": "",
+      "fullName": "Gamepads (controllers)",
+      "helpPath": "/all-features/gamepad",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWdhbWVwYWQtdmFyaWFudC1vdXRsaW5lIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYsOUg4VjExSDEwVjEzSDhWMTVINlYxM0g0VjExSDZWOU0xOC41LDlBMS41LDEuNSAwIDAsMSAyMCwxMC41QTEuNSwxLjUgMCAwLDEgMTguNSwxMkExLjUsMS41IDAgMCwxIDE3LDEwLjVBMS41LDEuNSAwIDAsMSAxOC41LDlNMTUuNSwxMkExLjUsMS41IDAgMCwxIDE3LDEzLjVBMS41LDEuNSAwIDAsMSAxNS41LDE1QTEuNSwxLjUgMCAwLDEgMTQsMTMuNUExLjUsMS41IDAgMCwxIDE1LjUsMTJNMTcsNUE3LDcgMCAwLDEgMjQsMTJBNyw3IDAgMCwxIDE3LDE5QzE1LjA0LDE5IDEzLjI3LDE4LjIgMTIsMTYuOUMxMC43MywxOC4yIDguOTYsMTkgNywxOUE3LDcgMCAwLDEgMCwxMkE3LDcgMCAwLDEgNyw1SDE3TTcsN0E1LDUgMCAwLDAgMiwxMkE1LDUgMCAwLDAgNywxN0M4LjY0LDE3IDEwLjA5LDE2LjIxIDExLDE1SDEzQzEzLjkxLDE2LjIxIDE1LjM2LDE3IDE3LDE3QTUsNSAwIDAsMCAyMiwxMkE1LDUgMCAwLDAgMTcsN0g3WiIgLz48L3N2Zz4=",
+      "name": "Gamepads",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/gamepad-variant-outline.svg",
+      "shortDescription": "Add support for gamepads (or other controllers) to your game, giving access to information such as button presses, axis positions, trigger pressure, etc...",
+      "version": "0.0.7",
+      "tags": [
+        "controllers",
+        "gamepads",
+        "joysticks",
+        "axis",
+        "xbox",
+        "ps4"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "Get the value of the pressure on a gamepad trigger.",
+          "fullName": "Pressure on a gamepad trigger",
+          "functionType": "Expression",
+          "name": "TriggerPressure",
+          "private": false,
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst trigger = eventsFunctionContext.getArgument(\"trigger\").toUpperCase();\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in expression: \"Pressure on a gamepad trigger\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\nif (trigger != \"LT\" && trigger != \"RT\" && trigger != \"L2\" && trigger != \"R2\") {\r\n    console.error('Parameter trigger is not valid in expression: \"Pressure on a gamepad trigger\"');\r\n    return;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nswitch (trigger) {\r\n    case 'LT':\r\n    case 'L2':\r\n        eventsFunctionContext.returnValue = gamepad.buttons[6].value;\r\n        break;\r\n\r\n    case 'RT':\r\n    case 'R2':\r\n        eventsFunctionContext.returnValue = gamepad.buttons[7].value;\r\n        break;\r\n\r\n    default:\r\n        eventsFunctionContext.returnValue = -1;\r\n        break;\r\n}",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Trigger: \"LT\", \"RT\", \"L2\", \"R2\"",
+              "longDescription": "",
+              "name": "trigger",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Get the force value of a gamepad stick.\n0 is stick on default position, 1 is at the maximum.",
+          "fullName": "Value of a stick force",
+          "functionType": "Expression",
+          "name": "StickForce",
+          "private": false,
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r\n\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier is not valid in expression: \"Value of a stick force\"');\r\n    return;\r\n}\r\n\r\nif (stick !== \"LEFT\" && stick !== \"RIGHT\") {\r\n    console.error('Parameter stick is not valid in expression: \"Value of a stick force\"');\r\n    return;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\n\r\nswitch (stick) {\r\n    case 'LEFT':\r\n        eventsFunctionContext.returnValue = gdjs.evtTools.common.clamp(Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId)) + Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId)), 0, 1);\r\n        break;\r\n\r\n    case 'RIGHT':\r\n        eventsFunctionContext.returnValue = gdjs.evtTools.common.clamp(Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId)) + Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId)), 0, 1);\r\n        break;\r\n\r\n    default:\r\n        eventsFunctionContext.returnValue = -1;\r\n        break;\r\n}",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Stick: \"LEFT\" or \"RIGHT\"",
+              "longDescription": "",
+              "name": "stick",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Get the rotation value of a gamepad stick.\nIf the deadzone value is high, the angle value is rounded to main axes, left, left, up, down.\nAn zero deadzone value give a total freedom on the angle value.",
+          "fullName": "Value of a stick rotation",
+          "functionType": "Expression",
+          "name": "StickRotationValue",
+          "private": false,
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r\n\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier is not valid in expression: \"Value of a stick rotation\"');\r\n    return;\r\n}\r\nif (stick !== \"LEFT\" && stick !== \"RIGHT\") {\r\n    console.error('Parameter stick is not valid in expression: \"Value of a stick rotation\"');\r\n    return;\r\n}\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nswitch (stick) {\r\n    case 'LEFT':\r\n        eventsFunctionContext.returnValue = gdjs._extensionController.axisToAngle(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId), gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId));\r\n        break;\r\n\r\n    case 'RIGHT':\r\n        eventsFunctionContext.returnValue = gdjs._extensionController.axisToAngle(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId), gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId));\r\n        break;\r\n\r\n    default:\r\n        eventsFunctionContext.returnValue = -1;\r\n        break;\r\n}",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Stick: \"LEFT\" or \"RIGHT\"",
+              "longDescription": "",
+              "name": "stick",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Get the value of axis of a gamepad stick.",
+          "fullName": "Value of a gamepad axis",
+          "functionType": "Expression",
+          "name": "AxisValue",
+          "private": false,
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r\nconst direction = eventsFunctionContext.getArgument(\"direction\").toUpperCase();\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier is not valid in expression: \"Value of a gamepad axis\"');\r\n    return;\r\n}\r\nif (stick != \"LEFT\" && stick != \"RIGHT\") {\r\n    console.error('Parameter stick is not valid in expression: \"Value of a gamepad axis\"');\r\n    return;\r\n}\r\nif (direction != \"UP\" && direction != \"DOWN\" && direction != \"LEFT\" && direction != \"RIGHT\" && direction != \"HORIZONTAL\" && direction != \"VERTICAL\") {\r\n    console.error('Parameter direction is not valid in expression: \"Value of a gamepad axis\"');\r\n    return;\r\n}\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nlet parameterError = false;\r\nswitch (stick) {\r\n    case 'LEFT':\r\n        switch (direction) {\r\n            case 'LEFT':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId);\r\n                }\r\n                break;\r\n\r\n            case 'RIGHT':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId);\r\n                }\r\n                break;\r\n\r\n            case 'UP':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId);\r\n                }\r\n                break;\r\n\r\n            case 'DOWN':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId);\r\n                }\r\n                break;\r\n\r\n            case \"HORIZONTAL\":\r\n                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId);\r\n                break;\r\n\r\n            case \"VERTICAL\":\r\n                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId);\r\n                break;\r\n\r\n            default:\r\n                break;\r\n        }\r\n        break;\r\n\r\n    case 'RIGHT':\r\n        switch (direction) {\r\n            case 'LEFT':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId);\r\n                }\r\n                break;\r\n\r\n            case 'RIGHT':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId);\r\n                }\r\n                break;\r\n\r\n            case 'UP':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId);\r\n                }\r\n                break;\r\n\r\n            case 'DOWN':\r\n                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId);\r\n                }\r\n                break;\r\n\r\n            case \"HORIZONTAL\":\r\n                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId);\r\n                break;\r\n\r\n            case \"VERTICAL\":\r\n                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId);\r\n                break;\r\n\r\n            default:\r\n                break;\r\n        }\r\n        break;\r\n\r\n    default:\r\n        break;\r\n}\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Stick: \"LEFT\" or \"RIGHT\"",
+              "longDescription": "",
+              "name": "stick",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Direction: \"UP\", \"DOWN\", \"LEFT\", \"RIGHT\", \"HORIZONTAL\" or \"VERTICAL\"",
+              "longDescription": "",
+              "name": "direction",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Test if a button is released on a gamepad. Buttons can be:\n* Xbox: \"A\", \"B\", \"X\", \"Y\", \"LB\", \"RB\", \"LT\", \"RT\", \"BACK\", \"START\",\n* PS4: \"CROSS\", \"SQUARE\", \"CIRCLE\", \"TRIANGLE\", \"L1\", \"L2\", \"R1\", \"R2\", \"SHARE\", \"OPTIONS\", \"PS_BUTTON\", \"CLICK_TOUCHPAD\",\n* Other: \"UP\", \"DOWN\", \"LEFT\", \"RIGHT\", \"CLICK_STICK_LEFT\", \"CLICK_STICK_RIGHT\"",
+          "fullName": "Gamepad button released",
+          "functionType": "Condition",
+          "name": "C_Button_released",
+          "private": false,
+          "sentence": "Button _PARAM2_ of gamepad _PARAM1_ is released",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst button = eventsFunctionContext.getArgument(\"button\").toUpperCase();\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in condition: \"Gamepad button released\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\nif (button === \"\") {\r\n    console.error('Parameter button is not valid in condition: \"Gamepad button released\"');\r\n    return;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nlet buttonId;\r\n\r\nswitch (button) {\r\n    case 'A':\r\n    case 'CROSS':\r\n        buttonId = 0;\r\n        break;\r\n    case 'B':\r\n    case 'CIRCLE':\r\n        buttonId = 1;\r\n        break;\r\n    case 'X':\r\n    case 'SQUARE':\r\n        buttonId = 2;\r\n        break;\r\n    case 'Y':\r\n    case 'TRIANGLE':\r\n        buttonId = 3;\r\n        break;\r\n    case 'LB':\r\n    case 'L1':\r\n        buttonId = 4;\r\n        break;\r\n    case 'RB':\r\n    case 'R1':\r\n        buttonId = 5;\r\n        break;\r\n    case 'LT':\r\n    case 'L2':\r\n        buttonId = 6;\r\n        break;\r\n    case 'RT':\r\n    case 'R2':\r\n        buttonId = 7;\r\n        break;\r\n\r\n    case 'UP':\r\n        buttonId = 12;\r\n        break;\r\n    case 'DOWN':\r\n        buttonId = 13;\r\n        break;\r\n    case 'LEFT':\r\n        buttonId = 14;\r\n        break;\r\n    case 'RIGHT':\r\n        buttonId = 15;\r\n        break;\r\n\r\n    case 'BACK':\r\n    case 'SHARE':\r\n        buttonId = 8;\r\n        break;\r\n    case 'START':\r\n    case 'OPTIONS':\r\n        buttonId = 9;\r\n        break;\r\n\r\n    case 'CLICK_STICK_LEFT':\r\n        buttonId = 10;\r\n        break;\r\n    case 'CLICK_STICK_RIGHT':\r\n        buttonId = 11;\r\n        break;\r\n\r\n    //PS4\r\n    case 'PS_BUTTON':\r\n        buttonId = 16;\r\n        break;\r\n    case 'CLICK_TOUCHPAD':\r\n        buttonId = 17;\r\n        break;\r\n\r\n    default:\r\n        console.error('The button: ' + button + ' in condition: \"Gamepad button released\" is not valid.');\r\n        break;\r\n}\r\n\r\nif (buttonId === undefined) {\r\n    console.error('There is no buttons valid in condition: \"Gamepad button released\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\nif (gamepad.buttons == null || gamepad.buttons[buttonId] == null) {\r\n    console.error('Buttons on the gamepad are not accessible in condition: \"Gamepad button released\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\n//Define default value on pressed button or use previous value\r\ngdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId] = gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId] || { pressed: false };\r\n\r\n//Get state of button at previous frame\r\nconst previousStateButton = gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed;\r\n\r\n//When previousStateButton is true and actual button state is not pressed\r\n//Player have release the button\r\nif (previousStateButton === true && gamepad.buttons[buttonId].pressed === false) {\r\n    // Save the last button used for the player    \r\n    gdjs._extensionController.players[playerId].lastButtonUsed = buttonId;\r\n    gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed = true;\r\n    eventsFunctionContext.returnValue = true;\r\n\r\n} else {\r\n    gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed = false;\r\n    eventsFunctionContext.returnValue = false;\r\n}\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The name of the button.",
+              "longDescription": "",
+              "name": "button",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the index of the last pressed button of a gamepad",
+          "fullName": "Last pressed button (id)",
+          "functionType": "Expression",
+          "name": "LastButtonID",
+          "private": false,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "//Get function parameter\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\n\r\n//Player id is not valid\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in expression: \"Last pressed button (id)\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\n\r\n//Return the last button used by the player\r\neventsFunctionContext.returnValue = gdjs._extensionController.players[playerId].lastButtonUsed;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if any button is pressed on a gamepad.",
+          "fullName": "Any gamepad button pressed",
+          "functionType": "Condition",
+          "name": "C_Any_Button_pressed",
+          "private": false,
+          "sentence": "Any button of gamepad _PARAM1_ is pressed",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameter\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in condition: \"Any gamepad button pressed\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nlet buttonId;\r\nfor (let i = 0; i < gamepad.buttons.length; i++) { //For each buttons\r\n    if (gamepad.buttons[i].pressed) { //One of them is pressed\r\n        buttonId = i; //Save the button pressed\r\n        break;\r\n    }\r\n}\r\n\r\nif (buttonId === undefined) {\r\n    console.error('There is no buttons valid in condition: \"Any gamepad button pressed\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\nif (gamepad.buttons == null || gamepad.buttons[buttonId] == null) {\r\n    console.error('Buttons on the gamepad are not accessible in condition: \"Any gamepad button pressed\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\n//When a button is pressed, save the button in lastButtonUsed for each players\r\nif (gamepad.buttons[buttonId].pressed) gdjs._extensionController.players[playerId].lastButtonUsed = buttonId;\r\neventsFunctionContext.returnValue = gamepad.buttons[buttonId].pressed;\r\n\r\n\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last button pressed. \nButtons for Xbox and PS4 can be:\n* Xbox: \"A\", \"B\", \"X\", \"Y\", \"LB\", \"RB\", \"LT\", \"RT\", \"BACK\", \"START\",\n* PS4: \"CROSS\", \"SQUARE\", \"CIRCLE\", \"TRIANGLE\", \"L1\", \"L2\", \"R1\", \"R2\", \"SHARE\", \"OPTIONS\", \"PS_BUTTON\", \"CLICK_TOUCHPAD\",\n* Both: \"UP\", \"DOWN\", \"LEFT\", \"RIGHT\", \"CLICK_STICK_LEFT\", \"CLICK_STICK_RIGHT\"",
+          "fullName": "Last pressed button (string)",
+          "functionType": "StringExpression",
+          "name": "LastButtonString",
+          "private": false,
+          "sentence": "Button _PARAM2_ of gamepad _PARAM1_ is pressed",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst controllerType = eventsFunctionContext.getArgument(\"controller_type\").toUpperCase();\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in string expression: \"Last pressed button (LastButtonString)\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\nif (controllerType === \"\") {\r\n    console.error('Parameter controller type is not valid in string expression: \"Last pressed button (LastButtonString)\"');\r\n    return;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\nif (gamepad !== null) { //Gamepad exist\r\n    //Get last btn id\r\n    const lastButtonUsedID = gdjs._extensionController.players[playerId].lastButtonUsed;\r\n\r\n    //Return last button as string    \r\n    eventsFunctionContext.returnValue = gdjs._extensionController.getInputString(controllerType, lastButtonUsedID);\r\n\r\n} else { //Gamepad dosen't exist\r\n    console.error('Your controller is not supported or the gamepad wasn\\'t detected in string expression: \"Last pressed button (LastButtonString)\"');\r\n    eventsFunctionContext.returnValue = \"Gamepad not connected\";\r\n}",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Controller type \"XBOX\" or \"PS4\". This defines the type of button names to return as a string. \"Mapping not exist\" is returned if invalid type is used.",
+              "longDescription": "",
+              "name": "controller_type",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if a button is pressed on a gamepad. \nButtons can be:\n* Xbox: \"A\", \"B\", \"X\", \"Y\", \"LB\", \"RB\", \"LT\", \"RT\", \"BACK\", \"START\",\n* PS4: \"CROSS\", \"SQUARE\", \"CIRCLE\", \"TRIANGLE\", \"L1\", \"L2\", \"R1\", \"R2\", \"SHARE\", \"OPTIONS\", \"PS_BUTTON\", \"CLICK_TOUCHPAD\",\n* Other: \"UP\", \"DOWN\", \"LEFT\", \"RIGHT\", \"CLICK_STICK_LEFT\", \"CLICK_STICK_RIGHT\"",
+          "fullName": "Gamepad button pressed",
+          "functionType": "Condition",
+          "name": "C_Button_pressed",
+          "private": false,
+          "sentence": "Button _PARAM2_ of gamepad _PARAM1_ is pressed",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst button = eventsFunctionContext.getArgument(\"button\").toUpperCase();\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in condition: \"Gamepad button pressed\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\nif (button === \"\") {\r\n    console.error('Parameter button is not valid in condition: \"Gamepad button pressed\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nlet buttonId;\r\n\r\nswitch (button) {\r\n    case 'A':\r\n    case 'CROSS':\r\n        buttonId = 0;\r\n        break;\r\n    case 'B':\r\n    case 'CIRCLE':\r\n        buttonId = 1;\r\n        break;\r\n    case 'X':\r\n    case 'SQUARE':\r\n        buttonId = 2;\r\n        break;\r\n    case 'Y':\r\n    case 'TRIANGLE':\r\n        buttonId = 3;\r\n        break;\r\n    case 'LB':\r\n    case 'L1':\r\n        buttonId = 4;\r\n        break;\r\n    case 'RB':\r\n    case 'R1':\r\n        buttonId = 5;\r\n        break;\r\n    case 'LT':\r\n    case 'L2':\r\n        buttonId = 6;\r\n        break;\r\n    case 'RT':\r\n    case 'R2':\r\n        buttonId = 7;\r\n        break;\r\n\r\n    case 'UP':\r\n        buttonId = 12;\r\n        break;\r\n    case 'DOWN':\r\n        buttonId = 13;\r\n        break;\r\n    case 'LEFT':\r\n        buttonId = 14;\r\n        break;\r\n    case 'RIGHT':\r\n        buttonId = 15;\r\n        break;\r\n\r\n    case 'BACK':\r\n    case 'SHARE':\r\n        buttonId = 8;\r\n        break;\r\n    case 'START':\r\n    case 'OPTIONS':\r\n        buttonId = 9;\r\n        break;\r\n\r\n    case 'CLICK_STICK_LEFT':\r\n        buttonId = 10;\r\n        break;\r\n    case 'CLICK_STICK_RIGHT':\r\n        buttonId = 11;\r\n        break;\r\n\r\n    //PS4\r\n    case 'PS_BUTTON':\r\n        buttonId = 16;\r\n        break;\r\n    case 'CLICK_TOUCHPAD':\r\n        buttonId = 17;\r\n        break;\r\n\r\n    default:\r\n        console.error('The button: ' + button + ' in condition: \"Gamepad button pressed\" is not valid.');\r\n        eventsFunctionContext.returnValue = false;\r\n        break;\r\n}\r\n\r\n\r\n\r\nif (buttonId === undefined) {\r\n    console.error('There is no buttons valid in condition: \"Gamepad button pressed\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\nif (gamepad.buttons == null || gamepad.buttons[buttonId] == null) {\r\n    console.error('Buttons on the gamepad are not accessible in condition: \"Gamepad button pressed\"');\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\n//When a button is pressed, save the button in lastButtonUsed for each players\r\nif (gamepad.buttons[buttonId].pressed) gdjs._extensionController.players[playerId].lastButtonUsed = buttonId;\r\neventsFunctionContext.returnValue = gamepad.buttons[buttonId].pressed;\r\n\r\n\r\n\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The name of the button.",
+              "longDescription": "",
+              "name": "button",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the value of the deadzone applied to a gamepad sticks, between 0 and 1.",
+          "fullName": "Gamepad deadzone for sticks",
+          "functionType": "Expression",
+          "name": "Deadzone",
+          "private": false,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "//Get function parameter\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in expression: \"Gamepad deadzone for sticks\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\n///Return the deadzone value for a given player\r\neventsFunctionContext.returnValue = gdjs._extensionController.players[playerId].deadzone;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Set the deadzone for sticks of the gamepad. The deadzone is an area for which movement on sticks won't be taken into account (instead, the stick will be considered as not moved). Deadzone is between 0 and 1, and is by default 0.2.",
+          "fullName": "Set gamepad deadzone for sticks",
+          "functionType": "Action",
+          "name": "A_Set_deadzone",
+          "private": false,
+          "sentence": "Set deadzone for sticks on gamepad: _PARAM1_ to _PARAM2_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "//Get function parameter\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst newDeadzone = eventsFunctionContext.getArgument(\"deadzone\");\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in action: \"Set gamepad deadzone for sticks\", is not valid, must be between 0 and 4.');\r\n    return;\r\n}\r\n\r\n// clamp the newDeadzone in range [0, 1].\r\n// https://github.com/4ian/GDevelop-extensions/pull/33#issuecomment-618224857\r\ngdjs._extensionController.players[playerId].deadzone = gdjs.evtTools.common.clamp(newDeadzone, 0, 1);\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Deadzone for sticks, 0.2 by default (0 to 1)",
+              "longDescription": "",
+              "name": "deadzone",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if a stick of a gamepad is pushed in a given direction.",
+          "fullName": "Gamepad stick pushed (axis)",
+          "functionType": "Condition",
+          "name": "C_Axis_pushed",
+          "private": false,
+          "sentence": "_PARAM2_ stick of gamepad _PARAM1_ is pushed in direction _PARAM3_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\nconst stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r\nconst direction = eventsFunctionContext.getArgument(\"direction\").toUpperCase();\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n    console.error('Parameter gamepad identifier in condition: \"Gamepad stick pushed (axis)\", is not valid number, must be between 0 and 4.');\r\n    return;\r\n}\r\nif (stick != \"LEFT\" && stick != \"RIGHT\") {\r\n    console.error('Parameter stick in condition: \"Gamepad stick pushed (axis)\", is not valid, must be LEFT or RIGHT');\r\n    return;\r\n}\r\nif (direction != \"UP\" && direction != \"DOWN\" && direction != \"LEFT\" && direction != \"RIGHT\") {\r\n    console.error('Parameter deadzone in condition: \"Gamepad stick pushed (axis)\", is not valid, must be UP, DOWN, LEFT or RIGHT');\r\n    return;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) {\r\n    eventsFunctionContext.returnValue = false;\r\n    return;\r\n}\r\n\r\n\r\n//Define in onFirstSceneLoaded function\r\nconst getNormalizedAxisValue = gdjs._extensionController.getNormalizedAxisValue;\r\n\r\nswitch (stick) {\r\n    case 'LEFT':\r\n        switch (direction) {\r\n            case 'LEFT':\r\n                if (getNormalizedAxisValue(gamepad.axes[0], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            case 'RIGHT':\r\n                if (getNormalizedAxisValue(gamepad.axes[0], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            case 'UP':\r\n                if (getNormalizedAxisValue(gamepad.axes[1], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            case 'DOWN':\r\n                if (getNormalizedAxisValue(gamepad.axes[1], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            default:\r\n                console.error('The value Direction on stick Left on the condition: \"Gamepad stick pushed (axis)\" is not valid.');\r\n                eventsFunctionContext.returnValue = false;\r\n                break;\r\n        }\r\n        break;\r\n\r\n    case 'RIGHT':\r\n        switch (direction) {\r\n            case 'LEFT':\r\n                if (getNormalizedAxisValue(gamepad.axes[2], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            case 'RIGHT':\r\n                if (getNormalizedAxisValue(gamepad.axes[2], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            case 'UP':\r\n                if (getNormalizedAxisValue(gamepad.axes[3], playerId) < 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            case 'DOWN':\r\n                if (getNormalizedAxisValue(gamepad.axes[3], playerId) > 0) {\r\n                    eventsFunctionContext.returnValue = true;\r\n                    return;\r\n                }\r\n                break;\r\n\r\n            default:\r\n                console.error('The value Direction on stick Right on the condition: \"Gamepad stick pushed (axis)\" is not valid.');\r\n                eventsFunctionContext.returnValue = false;\r\n                break;\r\n        }\r\n        break;\r\n\r\n    default:\r\n        console.error('The value Stick on the condition: \"Gamepad stick pushed (axis)\" is not valid.');\r\n        eventsFunctionContext.returnValue = false;\r\n        break;\r\n}\r\n\r\neventsFunctionContext.returnValue = false;\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Stick: \"LEFT\" or \"RIGHT\"",
+              "longDescription": "",
+              "name": "stick",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Direction: \"UP\", \"DOWN\", \"LEFT\" or \"RIGHT\"",
+              "longDescription": "",
+              "name": "direction",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the number of connected gamepads",
+          "fullName": "Connected gamepads number",
+          "functionType": "Expression",
+          "name": "ConnectedGamepadsCount",
+          "private": false,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n// Gamepads can be disconnected and become null, so we have to filter them.\r\neventsFunctionContext.returnValue = Object.keys(gamepads).filter(key => !!gamepads[key]).length;\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return a string containing informations about the specified gamepad",
+          "fullName": "Gamepad type",
+          "functionType": "StringExpression",
+          "name": "GamepadType",
+          "private": false,
+          "sentence": "Player _PARAM1_ use _PARAM2_ controller",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\nvar gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\n\n//Get function parameter\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\n\nif (playerId < 0 || playerId > 4) {\n    console.error('Parameter gamepad identifier in string expression: \"Gamepad type\", is not valid number, must be between 0 and 4');\n    return;\n}\n\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\nif (gamepad == null) return;\n\neventsFunctionContext.returnValue = (gamepads[playerId] && gamepads[playerId].id) ? gamepads[playerId].id : \"No information for player \" + (playerId + 1)\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the specified gamepad has the specified information in its description. Useful to know if the gamepad is a Xbox or PS4 controller.",
+          "fullName": "Gamepad type",
+          "functionType": "Condition",
+          "name": "C_Controller_type",
+          "private": false,
+          "sentence": "Gamepad _PARAM1_ is a _PARAM2_ controller",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\n\n//Get function parameters\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\nconst controllerType = eventsFunctionContext.getArgument(\"controller_type\").toUpperCase();\n\nif (playerId < 0 || playerId > 4) {\n    console.error('Parameter gamepad identifier in condition: \"Gamepad type\", is not valid number, must be between 0 and 4.');\n    return;\n}\nif (controllerType === \"\") {\n    console.error('Parameter type in condition: \"Gamepad type\", is not a string.');\n    return;\n}\n\nconst gamepad = gamepads[playerId];\n\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\nif (gamepad == null) return;\n\neventsFunctionContext.returnValue = gamepad ? gamepad.id.toUpperCase().indexOf(controllerType) !== -1 : false;\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Type: \"Xbox\", \"PS4\", \"STEAM\" or \"PS3\" (among other)",
+              "longDescription": "",
+              "name": "controller_type",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if a gamepad is connected.",
+          "fullName": "Gamepad connected",
+          "functionType": "Condition",
+          "name": "C_Controller_X_is_connected",
+          "private": false,
+          "sentence": "Gamepad _PARAM1_ is plugged and connected",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\n\n//Get function parameter\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\n\nif (playerId < 0 || playerId > 4) {\n    console.error('Parameter gamepad identifier in condition: \"Gamepad connected\", is not valid number, must be between 0 and 4.');\n    return;\n}\n\n// If gamepad was disconnected it will be null (so this will return false)\n// If gamepad was never connected it will be undefined (so this will return false)\neventsFunctionContext.returnValue = !!gamepads[playerId];",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Generate a vibration on the specified controller. Might only work if the game is running in a recent web browser.",
+          "fullName": "Gamepad vibration",
+          "functionType": "Action",
+          "name": "A_Vibrate_controller",
+          "private": false,
+          "sentence": "Make gamepad _PARAM1_ vibrate for _PARAM2_ seconds",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\n//Vibration work only on game in browser.\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\n\n//Get function parameters\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\nconst duration = eventsFunctionContext.getArgument(\"duration\") || 1;\n\nif (playerId < 0 || playerId > 4) {\n  console.error('Parameter gamepad identifier in action: \"Gamepad connected\", is not valid number, must be between 0 and 4.');\n  return;\n}\n\nconst gamepad = gamepads[playerId];\n\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\nif (gamepad == null) return;\n\nif (gamepad && gamepad.vibrationActuator) {\n  gamepad.vibrationActuator.playEffect(\"dual-rumble\", {\n    startDelay: 0,\n    duration: duration * 1000,\n    weakMagnitude: 1.0,\n    strongMagnitude: 1.0\n  });\n}",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            },
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Time of the vibration, in seconds (optional, default value is 1)",
+              "longDescription": "",
+              "name": "duration",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onFirstSceneLoaded",
+          "private": false,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "//Define an new private object javascript for the gamepad extension\r\ngdjs._extensionController = {\r\n    players: {\r\n        0: { mapping: 'DEFAULT', lastButtonUsed: -1, deadzone: 0.2, previousFrameStateButtons: {}, },\r\n        1: { mapping: 'DEFAULT', lastButtonUsed: -1, deadzone: 0.2, previousFrameStateButtons: {}, },\r\n        2: { mapping: 'DEFAULT', lastButtonUsed: -1, deadzone: 0.2, previousFrameStateButtons: {}, },\r\n        3: { mapping: 'DEFAULT', lastButtonUsed: -1, deadzone: 0.2, previousFrameStateButtons: {}, },\r\n    },\r\n    controllerButtonNames: { //Map associating controller button ids to button names\r\n        \"XBOX\": {\r\n            0: \"A\",\r\n            1: \"B\",\r\n            2: \"X\",\r\n            3: \"Y\",\r\n            4: \"LB\",\r\n            5: \"RB\",\r\n            6: \"LT\",\r\n            7: \"RT\",\r\n            8: \"BACK\",\r\n            9: \"START\",\r\n            10: \"CLICK_STICK_LEFT\",\r\n            11: \"CLICK_STICK_RIGHT\",\r\n            12: \"UP\",\r\n            13: \"DOWN\",\r\n            14: \"LEFT\",\r\n            15: \"RIGHT\",\r\n            16: \"NONE\",\r\n            17: \"NONE\"\r\n        },\r\n        \"PS4\": {\r\n            0: \"CROSS\",\r\n            1: \"CIRCLE\",\r\n            2: \"SQUARE\",\r\n            3: \"TRIANGLE\",\r\n            4: \"L1\",\r\n            5: \"R1\",\r\n            6: \"L2\",\r\n            7: \"R2\",\r\n            8: \"SHARE\",\r\n            9: \"OPTIONS\",\r\n            10: \"CLICK_STICK_LEFT\",\r\n            11: \"CLICK_STICK_RIGHT\",\r\n            12: \"UP\",\r\n            13: \"DOWN\",\r\n            14: \"LEFT\",\r\n            15: \"RIGHT\",\r\n            16: \"PS_BUTTON\",\r\n            17: \"CLICK_TOUCHPAD\"\r\n        }\r\n    }\r\n};\r\n\r\ngdjs._extensionController.getInputString = function (type, buttonId) {\r\n    const controllerButtonNames = gdjs._extensionController.controllerButtonNames;\r\n    if (controllerButtonNames[type] !== undefined) {\r\n        return controllerButtonNames[type][buttonId];\r\n    }\r\n\r\n    return \"UNKNOWN_BUTTON\";\r\n}\r\n\r\ngdjs._extensionController.axisToAngle = function (deltaX, deltaY) {\r\n    const rad = Math.atan2(deltaY, deltaX);\r\n    const deg = rad * (180 / Math.PI);\r\n    return deg;\r\n}\r\n\r\n//Returns the new value taking into account the dead zone for the player_ID given\r\ngdjs._extensionController.getNormalizedAxisValue = function (v, player_ID) {\r\n    //    gdjs._extensionController = gdjs._extensionController || { deadzone: 0.2 };\r\n\r\n    // Anything smaller than this is assumed to be 0,0\r\n    const DEADZONE = gdjs._extensionController.players[player_ID].deadzone;\r\n\r\n    if (Math.abs(v) < DEADZONE) {\r\n        // In the dead zone, set to 0\r\n        v = 0;\r\n\r\n        if (v == null) {\r\n            return 0;\r\n        } else {\r\n            return v;\r\n        }\r\n\r\n    } else {\r\n        // We're outside the dead zone, but we'd like to smooth\r\n        // this value out so it still runs nicely between 0..1.\r\n        // That is, we don't want it to jump suddenly from 0 to\r\n        // DEADZONE.\r\n\r\n        // Remap v from\r\n        //    DEADZONE..1 to 0..(1-DEADZONE)\r\n        // or from\r\n        //    -1..-DEADZONE to -(1-DEADZONE)..0\r\n\r\n        v = v - Math.sign(v) * DEADZONE;\r\n\r\n        // Remap v from\r\n        //    0..(1-DEADZONE) to 0..1\r\n        // or from\r\n        //    -(1-DEADZONE)..0 to -1..0\r\n\r\n        return v / (1 - DEADZONE);\r\n    }\r\n};",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onScenePostEvents",
+          "private": false,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "//Each time a player press a button i save the last button pressed for the next frame\n/** @type {Gamepad[]} */\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\n\n//Get function parameter\nlet countPlayers = Object.keys(gdjs._extensionController.players).length;\n\n//Repeat for each players\nfor (let i = 0; i < countPlayers; i++) {\n    let gamepad = gamepads[i]; // Get the gamepad of the player\n\n    //we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\n    if (gamepad == null) {\n        return;\n    }\n\n    for (let b = 0; b < Object.keys(gamepad.buttons).length; b++) { //For each buttons\n        if (gamepad.buttons[b].pressed) { //One of them is pressed\n            gdjs._extensionController.players[i].lastButtonUsed = b; //Save the button pressed\n\n            //Save the state of the button for the next frame.\n            gdjs._extensionController.players[i].previousFrameStateButtons[b] = { pressed: true };\n        }\n    }\n}\n\n\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if any button is released on a gamepad.",
+          "fullName": "Any gamepad button released",
+          "functionType": "Condition",
+          "name": "C_any_button_released",
+          "private": false,
+          "sentence": "Any button of gamepad _PARAM1_ is released",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "/** @type {Gamepad[]} */\r\nconst gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r\n\r\n//Get function parameters\r\nconst playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r\n\r\nif (playerId < 0 || playerId > 4) {\r\n\tconsole.error('Parameter gamepad identifier in condition: \"Any gamepad button released\", is not valid number, must be between 0 and 4.');\r\n\treturn;\r\n}\r\n\r\nconst gamepad = gamepads[playerId];\r\n\r\n//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r\nif (gamepad == null) return;\r\n\r\nfor (let buttonId = 0; buttonId < gamepad.buttons.length; buttonId++) { //For each buttons on current frame.\r\n\r\n\tif (buttonId === undefined) {\r\n\t\teventsFunctionContext.returnValue = false;\r\n\t\treturn;\r\n\t}\r\n\r\n\t//Get previous value or define value by default for the current button\r\n\tgdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId] = gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId] || { pressed: false };\r\n\r\n\t//Get state of the button at previous frame\r\n\tconst previousStateButtonIsPressed = gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed;\r\n\r\n\t//Get the state of the button on the current frame.\r\n\tconst currentFrameStateButtonIsPressed = gamepad.buttons[buttonId].pressed;\r\n\r\n\t//When previousStateButtonIsPressed is true and actual button state is not pressed\r\n\t//Player have release the button\r\n\tif (previousStateButtonIsPressed === true && currentFrameStateButtonIsPressed === false) {\r\n\t\tgdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed = false;\r\n\t\teventsFunctionContext.returnValue = true;\r\n\t\t//break;\r\n\t\treturn;\r\n\t} else {\r\n\t\teventsFunctionContext.returnValue = false;\r\n\t}\r\n\r\n\tif (currentFrameStateButtonIsPressed) gdjs._extensionController.players[playerId].lastButtonUsed = buttonId;\r\n}\r\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "longDescription": "",
+              "name": "player_ID",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": []
+    },
     {
       "author": "Tristan Rhodes (https://victrisgames.itch.io/)",
       "description": "When the checkbox is checked, the condition `Checked` is verified.\nA halo appears when the mouse hovers near the checkbox.\n\nCheckbox cannot be toggled by users if any of these are true:\n- Checkbox is hidden\n- Checkbox's layer is hidden\n- Checkbox is disabled\n\nCheckbox can always be changed by an action.",
@@ -16558,6 +19098,233 @@
         "snap": true,
         "windowMask": false,
         "zoomFactor": 0.47999999999999954
+      }
+    },
+    {
+      "associatedLayout": "Menu",
+      "name": "Options",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 66,
+          "layer": "Options",
+          "locked": false,
+          "name": "resolution",
+          "persistentUuid": "49cd6a90-c2e0-47d0-9708-c4f732cc2e4a",
+          "width": 254,
+          "x": 608,
+          "y": 384,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "HD",
+          "persistentUuid": "18fa8971-2f5e-4df8-8c0f-c47e788d7b71",
+          "width": 0,
+          "x": 864,
+          "y": 352,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "FHD",
+          "persistentUuid": "93a59369-9c7c-4ed1-9400-8152d5ec7d54",
+          "width": 0,
+          "x": 864,
+          "y": 416,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "fullscreentext",
+          "persistentUuid": "a7efb548-f469-49ab-b505-c91409fba2f9",
+          "width": 0,
+          "x": 608,
+          "y": 576,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "fullscreenoff",
+          "persistentUuid": "cefd143a-ca30-4b53-bbcd-918e20518596",
+          "width": 0,
+          "x": 896,
+          "y": 608,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "fullscreenon",
+          "persistentUuid": "5caf4afd-db84-463c-8971-26d519144763",
+          "width": 0,
+          "x": 896,
+          "y": 544,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "difficulty",
+          "persistentUuid": "54e51c13-83cb-466e-834a-95a36f505f97",
+          "width": 0,
+          "x": 1472,
+          "y": 416,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "easy",
+          "persistentUuid": "9753222c-f11d-402b-992f-d6f865246ef4",
+          "width": 0,
+          "x": 1472,
+          "y": 480,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "medium",
+          "persistentUuid": "56f9655e-026b-4d5f-96a5-9064a056ecf0",
+          "width": 0,
+          "x": 1472,
+          "y": 544,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "hard",
+          "persistentUuid": "b310545b-7ad2-407f-bb6b-d643199a76b4",
+          "width": 0,
+          "x": 1472,
+          "y": 608,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "credits",
+          "persistentUuid": "076b17e0-10f5-478f-9d1e-83c9e4679c69",
+          "width": 0,
+          "x": 1760,
+          "y": 992,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "layer": "Options",
+          "locked": false,
+          "name": "mouseCameratext",
+          "persistentUuid": "047260fa-b86c-4563-9918-cbddda0fd5a8",
+          "width": 512,
+          "x": 608,
+          "y": 736,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Options",
+          "locked": false,
+          "name": "mouseCameracheckbox",
+          "persistentUuid": "c1796535-0f1e-4319-903f-0cf4d688119b",
+          "width": 0,
+          "x": 1152,
+          "y": 768,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": true,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridWidth": 32,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.5799999999999996
       }
     }
   ],
