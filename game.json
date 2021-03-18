@@ -24,7 +24,34 @@
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
-    "platformSpecificAssets": {},
+    "platformSpecificAssets": {
+      "android-icon-144": "android-icon-144.png",
+      "android-icon-192": "android-icon-192.png",
+      "android-icon-36": "android-icon-36.png",
+      "android-icon-48": "android-icon-48.png",
+      "android-icon-72": "android-icon-72.png",
+      "android-icon-96": "android-icon-96.png",
+      "desktop-icon-512": "desktop-icon-512.png",
+      "ios-icon-100": "ios-icon-100.png",
+      "ios-icon-1024": "ios-icon-1024.png",
+      "ios-icon-114": "ios-icon-114.png",
+      "ios-icon-120": "ios-icon-120.png",
+      "ios-icon-144": "ios-icon-144.png",
+      "ios-icon-152": "ios-icon-152.png",
+      "ios-icon-167": "ios-icon-167.png",
+      "ios-icon-180": "ios-icon-180.png",
+      "ios-icon-20": "ios-icon-20.png",
+      "ios-icon-29": "ios-icon-29.png",
+      "ios-icon-40": "ios-icon-40.png",
+      "ios-icon-50": "ios-icon-50.png",
+      "ios-icon-57": "ios-icon-57.png",
+      "ios-icon-58": "ios-icon-58.png",
+      "ios-icon-60": "ios-icon-60.png",
+      "ios-icon-72": "ios-icon-72.png",
+      "ios-icon-76": "ios-icon-76.png",
+      "ios-icon-80": "ios-icon-80.png",
+      "ios-icon-87": "ios-icon-87.png"
+    },
     "loadingScreen": {
       "showGDevelopSplash": true
     },
@@ -472,6 +499,321 @@
         "metadata": "",
         "name": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sads_logo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sads_logo.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "desktop-icon-512.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "desktop-icon-512.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "android-icon-192.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-192.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "android-icon-144.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-144.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "android-icon-96.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-96.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "android-icon-72.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-72.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "android-icon-48.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-48.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "android-icon-36.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-36.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-1024.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-1024.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-180.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-180.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-167.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-167.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-152.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-152.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-144.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-144.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-120.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-120.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-114.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-114.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-100.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-100.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-87.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-87.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-80.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-80.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-76.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-76.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-72.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-72.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-60.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-60.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-58.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-58.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-57.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-57.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-50.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-50.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-40.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-40.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-29.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-29.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ios-icon-20.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-20.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/z_order_up.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\z_order_up.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/z_order_down.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\z_order_down.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "firstfloor-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "firstfloor-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "firstfloor-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "firstfloor-1-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/first_floor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\first_floor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/second_floor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\second_floor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/clip_floor_one.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\clip_floor_one.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/clip_floor_two.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\clip_floor_two.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -486,6 +828,12 @@
         },
         {
           "name": "toggletoolvisibility"
+        },
+        {
+          "name": "reloadscenetext"
+        },
+        {
+          "name": "reloadscene"
         }
       ]
     }
@@ -505,6 +853,11 @@
       "name": "showDebugMenu",
       "type": "string",
       "value": "0"
+    },
+    {
+      "name": "showCursor",
+      "type": "string",
+      "value": "1"
     }
   ],
   "layouts": [
@@ -545,9 +898,9 @@
           "locked": false,
           "name": "skiptext",
           "persistentUuid": "b676d779-7463-49a4-bf99-8117090ea3bd",
-          "width": 586,
-          "x": 656,
-          "y": 940,
+          "width": 423,
+          "x": 750,
+          "y": 540,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1544,13 +1897,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 2,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 2
             }
           ],
           "content": {
@@ -2558,7 +2911,7 @@
         "gridWidth": 48,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.5799999999999998
+        "zoomFactor": 0.5599999999999996
       },
       "objectsGroups": [
         {
@@ -2568,7 +2921,7 @@
               "name": "standing_increase_anxiety"
             },
             {
-              "name": "clip"
+              "name": "clip_1st_floor"
             },
             {
               "name": "PathNPCDestination"
@@ -2578,6 +2931,15 @@
             },
             {
               "name": "fast_moving_increase_anxiety"
+            },
+            {
+              "name": "ZOrderUp"
+            },
+            {
+              "name": "ZOrderDown"
+            },
+            {
+              "name": "clip_2nd_floor"
             }
           ]
         }
@@ -2598,14 +2960,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 32,
+          "height": 48,
           "layer": "GUI",
           "locked": false,
           "name": "AnxietyBar",
           "persistentUuid": "b693f066-9c83-421b-8904-d2c21dc24f31",
           "width": 320,
-          "x": 16,
-          "y": 1032,
+          "x": 48,
+          "y": 1008,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -2617,10 +2979,10 @@
           "height": 96,
           "layer": "",
           "locked": false,
-          "name": "clip",
+          "name": "clip_1st_floor",
           "persistentUuid": "313c210f-3927-46b7-af7a-6ba76e7856d1",
-          "width": 864,
-          "x": 192,
+          "width": 1632,
+          "x": 144,
           "y": 48,
           "zOrder": 4,
           "numberProperties": [],
@@ -2633,10 +2995,10 @@
           "height": 768,
           "layer": "",
           "locked": false,
-          "name": "clip",
+          "name": "clip_1st_floor",
           "persistentUuid": "b88aafed-fd8f-4731-92bf-c61b3792cd2a",
           "width": 96,
-          "x": 96,
+          "x": 48,
           "y": 144,
           "zOrder": 4,
           "numberProperties": [],
@@ -2662,14 +3024,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 384,
+          "height": 48,
           "layer": "",
           "locked": false,
-          "name": "clip",
+          "name": "clip_1st_floor",
           "persistentUuid": "3c039365-bd64-446a-8ba2-3f6ca414238d",
-          "width": 384,
-          "x": 432,
-          "y": 336,
+          "width": 96,
+          "x": 1344,
+          "y": 672,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -2685,7 +3047,7 @@
           "persistentUuid": "9b348f9b-9b1e-4d64-bcec-3735b7af22cc",
           "width": 0,
           "x": 912,
-          "y": 240,
+          "y": 768,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -2779,10 +3141,10 @@
           "height": 768,
           "layer": "",
           "locked": false,
-          "name": "clip",
+          "name": "clip_1st_floor",
           "persistentUuid": "f9042659-8cb5-4c1d-bc55-61e77b2dbe41",
           "width": 96,
-          "x": 1056,
+          "x": 1776,
           "y": 144,
           "zOrder": 4,
           "numberProperties": [],
@@ -2795,10 +3157,10 @@
           "height": 96,
           "layer": "",
           "locked": false,
-          "name": "clip",
+          "name": "clip_1st_floor",
           "persistentUuid": "f467a72b-051a-47ef-8a41-6b527961678b",
-          "width": 864,
-          "x": 192,
+          "width": 1632,
+          "x": 144,
           "y": 912,
           "zOrder": 4,
           "numberProperties": [],
@@ -2852,9 +3214,217 @@
           "name": "FastPathNPC",
           "persistentUuid": "68b67213-79bd-494b-9a0b-2542c868657e",
           "width": 0,
-          "x": 864,
+          "x": 576,
           "y": 192,
           "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "locked": false,
+          "name": "AnxietyText",
+          "persistentUuid": "2e7c7cc4-640f-4ab6-aac9-243c16587131",
+          "width": 0,
+          "x": 48,
+          "y": 1010,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "ZOrderUp",
+          "persistentUuid": "caf4690e-160f-49bb-8718-56e264389374",
+          "width": 0,
+          "x": 1392,
+          "y": 624,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "ZOrderDown",
+          "persistentUuid": "3a0bb56e-5087-4f65-bc91-896a033e3a53",
+          "width": 0,
+          "x": 1344,
+          "y": 624,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "cd69926d-06a6-4a6a-bf6e-3466bc9bfb48",
+          "width": 192,
+          "x": 432,
+          "y": 336,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 768,
+          "layer": "",
+          "locked": false,
+          "name": "first_floor",
+          "persistentUuid": "9327809c-8cc4-42ba-adfd-6b122f3b0131",
+          "width": 1632,
+          "x": 144,
+          "y": 144,
+          "zOrder": -1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "second_floor",
+          "persistentUuid": "4ebeaf93-6bd9-4e74-8c34-ef2e420b200e",
+          "width": 240,
+          "x": 1440,
+          "y": 432,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "2c7eb2f5-3a07-49a1-966b-761b4b24d2d5",
+          "width": 192,
+          "x": 1536,
+          "y": 192,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "c98e12d4-5328-4f68-a15b-214c553cfd23",
+          "width": 96,
+          "x": 1344,
+          "y": 576,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "99150980-0ac1-496a-aaea-39fb0e3a7e33",
+          "width": 48,
+          "x": 1392,
+          "y": 432,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "14795e4b-ae04-421d-8aa0-49b537dea10e",
+          "width": 240,
+          "x": 1440,
+          "y": 384,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "b962c440-3403-48dd-99cf-d8e7eff0f3aa",
+          "width": 48,
+          "x": 1680,
+          "y": 432,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "da4ba64b-2a57-4e82-943c-3ff7eb41855a",
+          "width": 240,
+          "x": 1440,
+          "y": 816,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "add4475d-dcf7-4a09-989f-2c512df8937f",
+          "width": 48,
+          "x": 1392,
+          "y": 720,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2883,7 +3453,14 @@
               "value": "5"
             }
           ],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "cost": 2,
+              "impassable": true,
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+            }
+          ],
           "animations": [
             {
               "name": "",
@@ -3387,14 +3964,7 @@
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
-          "behaviors": [
-            {
-              "name": "PathfindingObstacle",
-              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
-              "cost": 2,
-              "impassable": true
-            }
-          ],
+          "behaviors": [],
           "animations": [
             {
               "name": "Enemy",
@@ -3428,12 +3998,29 @@
           ]
         },
         {
-          "height": 32,
-          "name": "clip",
+          "height": 48,
+          "name": "clip_1st_floor",
           "tags": "",
-          "texture": "sprites\\toolsprites\\clip.png",
+          "texture": "sprites\\toolsprites\\clip_floor_one.png",
           "type": "TiledSpriteObject::TiledSprite",
-          "width": 32,
+          "width": 48,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "PathfindingObstacle",
+              "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+              "cost": 2,
+              "impassable": true
+            }
+          ]
+        },
+        {
+          "height": 48,
+          "name": "clip_2nd_floor",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\clip_floor_two.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
           "variables": [],
           "behaviors": [
             {
@@ -3490,19 +4077,36 @@
           ]
         },
         {
+          "name": "AnxietyText",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "Anxiety: ",
+            "opacity": 255,
+            "fontSize": 30,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
           "name": "drawtoolstext",
           "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 1,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 1
             }
           ],
           "content": {
@@ -3523,13 +4127,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 1,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 1
             },
             {
               "name": "Checkbox",
@@ -3562,9 +4166,204 @@
           },
           "absoluteCoordinates": false,
           "clearBetweenFrames": true
+        },
+        {
+          "name": "reloadscenetext",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 1
+            }
+          ],
+          "content": {
+            "text": "Reload scene: ",
+            "opacity": 255,
+            "fontSize": 50,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Regular-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "reloadscene",
+          "tags": "",
+          "type": "PrimitiveDrawing::Drawer",
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Checkbox",
+              "type": "Checkbox::Checkbox",
+              "Checked": false,
+              "PrimaryColor": "24;119;211",
+              "SecondaryColor": "255;255;255",
+              "SideLength": 24,
+              "LineWidth": 5,
+              "HaloRadius": 0,
+              "ToggleChanged": false,
+              "Disabled": false,
+              "BorderThickness": 2,
+              "HaloOpacityHover": 64,
+              "HaloOpacityPressed": 96
+            }
+          ],
+          "fillOpacity": 255,
+          "outlineSize": 1,
+          "outlineOpacity": 255,
+          "fillColor": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "outlineColor": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          },
+          "absoluteCoordinates": false,
+          "clearBetweenFrames": true
+        },
+        {
+          "name": "ZOrderUp",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "sprites\\toolsprites\\z_order_up.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ZOrderDown",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "sprites\\toolsprites\\z_order_down.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "height": 48,
+          "name": "first_floor",
+          "tags": "",
+          "texture": "sprites\\first_floor.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "height": 48,
+          "name": "second_floor",
+          "tags": "",
+          "texture": "sprites\\second_floor.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ]
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "NPC"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "GUIEvents"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "ToolSprites"
+        },
         {
           "disabled": false,
           "folded": false,
@@ -3586,115 +4385,16 @@
                 ""
               ],
               "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Player",
-                "clip",
-                "",
-                "",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SeparateFromObjects"
-              },
-              "parameters": [
-                "Player",
-                "clip",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "Escape"
-              ],
-              "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": [],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "paused",
-                "+",
-                "1"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "VarScene"
-              },
-              "parameters": [
-                "paused",
+                "AnxietyText",
                 "=",
-                "1"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ChangeLayerTimeScale"
-              },
-              "parameters": [
-                "",
-                "\"\"",
-                "0"
+                "\"Anxiety: \" + ToString(trunc(Player.Variable(AnxietyLevel) * 10)/10)"
               ],
               "subInstructions": []
             }
@@ -3704,17 +4404,33 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Make the anxiety number count up instead of jumping",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
                 "inverted": false,
-                "value": "VarScene"
+                "value": "VarObjet"
               },
               "parameters": [
-                "paused",
+                "Player",
+                "AnxietyLevel",
                 ">=",
-                "2"
+                "5"
               ],
               "subInstructions": []
             }
@@ -3723,97 +4439,18 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "ModVarObjet"
               },
               "parameters": [
-                "paused",
+                "Player",
+                "AnxietyLevel",
                 "=",
-                "0"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ChangeLayerTimeScale"
-              },
-              "parameters": [
-                "",
-                "\"\"",
-                "1"
+                "5"
               ],
               "subInstructions": []
             }
           ],
           "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "VarScene"
-              },
-              "parameters": [
-                "paused",
-                "=",
-                "0"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetCameraX"
-              },
-              "parameters": [
-                "",
-                "=",
-                "lerp(CameraX(), Player.X(), Player.Variable(CameraSmoothTime))",
-                "\"\"",
-                "0"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetCameraY"
-              },
-              "parameters": [
-                "",
-                "=",
-                "lerp(CameraY(), Player.Y(), Player.Variable(CameraSmoothTime))",
-                "\"\"",
-                "0"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Link",
-          "include": {
-            "includeConfig": 0
-          },
-          "target": "NPC"
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Link",
-          "include": {
-            "includeConfig": 0
-          },
-          "target": "GUIEvents"
         }
       ],
       "layers": [
@@ -5955,7 +6592,7 @@
               "colorR": 74,
               "creationTime": 0,
               "disabled": false,
-              "folded": false,
+              "folded": true,
               "name": "Normal speed NPC pathfinding",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -6477,7 +7114,7 @@
               "colorR": 74,
               "creationTime": 0,
               "disabled": false,
-              "folded": false,
+              "folded": true,
               "name": "Fast speed NPC pathfinding",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -7124,7 +7761,7 @@
                     "Player",
                     "AnxietyLevel",
                     "+",
-                    "0.25"
+                    "0.3"
                   ],
                   "subInstructions": []
                 }
@@ -7378,7 +8015,7 @@
                     "Player",
                     "AnxietyLevel",
                     "+",
-                    "0.55"
+                    "0.5"
                   ],
                   "subInstructions": []
                 }
@@ -7574,7 +8211,7 @@
                     "Player",
                     "AnxietyLevel",
                     "+",
-                    "1"
+                    "1.1"
                   ],
                   "subInstructions": []
                 }
@@ -7683,6 +8320,103 @@
             {
               "type": {
                 "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"DebugMenu\"",
+                "0",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "showCursor",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MontreSouris"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "showCursor",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CacheSouris"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
                 "value": "VarGlobal"
               },
               "parameters": [
@@ -7734,6 +8468,47 @@
               "parameters": [
                 "ToolSprites",
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "Escape"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "paused",
+                "+",
+                "1"
               ],
               "subInstructions": []
             }
@@ -7838,20 +8613,24 @@
             {
               "type": {
                 "inverted": false,
-                "value": "KeyPressed"
+                "value": "Checkbox::Checkbox::IsChecked"
               },
               "parameters": [
-                "",
-                "F1"
+                "reloadscene",
+                "Checkbox",
+                ""
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
+                "value": "LayerVisible"
               },
-              "parameters": [],
+              "parameters": [
+                "",
+                "\"Debug Layer\""
+              ],
               "subInstructions": []
             }
           ],
@@ -7859,12 +8638,12 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarGlobal"
+                "value": "Scene"
               },
               "parameters": [
-                "showDebugMenu",
-                "+",
-                "1"
+                "",
+                "\"Main\"",
+                ""
               ],
               "subInstructions": []
             }
@@ -7990,9 +8769,222 @@
             {
               "type": {
                 "inverted": false,
-                "value": "DepartScene"
+                "value": "VarScene"
               },
               "parameters": [
+                "paused",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeLayerTimeScale"
+              },
+              "parameters": [
+                "",
+                "\"\"",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "showCursor",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "showDebugMenu",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "paused",
+                ">=",
+                "2"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "paused",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeLayerTimeScale"
+              },
+              "parameters": [
+                "",
+                "\"\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "showCursor",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "showDebugMenu",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "paused",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetCameraX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "lerp(CameraX(), Player.X(), Player.Variable(CameraSmoothTime))",
+                "\"\"",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetCameraY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "lerp(CameraY(), Player.Y(), Player.Variable(CameraSmoothTime))",
+                "\"\"",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "showCursor",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "showDebugMenu",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Main",
+      "lastChangeTimeStamp": 0,
+      "name": "ToolSprites",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "ZOrderUp",
+                "",
+                "",
                 ""
               ],
               "subInstructions": []
@@ -8002,13 +8994,236 @@
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                "value": "ChangePlan"
               },
               "parameters": [
+                "Player",
+                "=",
+                "11"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "ZOrderDown",
                 "",
-                "\"DebugMenu\"",
-                "0",
-                "0"
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "second_floor",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Plan"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "second_floor",
+                "Tween",
+                "\"player under second floor\"",
+                "100",
+                "\"linear\"",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "second_floor",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Plan"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "second_floor",
+                "Tween",
+                "\"player under second floor\"",
+                "255",
+                "\"linear\"",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "clip_1st_floor",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SeparateFromObjects"
+              },
+              "parameters": [
+                "Player",
+                "clip_1st_floor",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "clip_2nd_floor",
+                "",
+                "",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Plan"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "11"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SeparateFromObjects"
+              },
+              "parameters": [
+                "Player",
+                "clip_2nd_floor",
+                ""
               ],
               "subInstructions": []
             }
@@ -15385,6 +16600,38 @@
           "x": 1715,
           "y": 101,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Debug Layer",
+          "locked": false,
+          "name": "reloadscene",
+          "persistentUuid": "66107326-43ca-4068-b0b2-fe87c2429131",
+          "width": 0,
+          "x": 1805,
+          "y": 255,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Debug Layer",
+          "locked": false,
+          "name": "reloadscenetext",
+          "persistentUuid": "0963dbf0-35fc-449f-9c7b-8560f50ad26d",
+          "width": 0,
+          "x": 1531,
+          "y": 176,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
