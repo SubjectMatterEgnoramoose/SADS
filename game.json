@@ -53,7 +53,7 @@
       "ios-icon-87": "ios-icon-87.png"
     },
     "loadingScreen": {
-      "showGDevelopSplash": true
+      "showGDevelopSplash": false
     },
     "extensionProperties": [],
     "extensions": [
@@ -488,11 +488,105 @@
         "name": "cursor-1-0.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/trigger.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\trigger.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/trigger_floor_one.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\trigger_floor_one.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/trigger_floor_two.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\trigger_floor_two.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\button.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/toolsprites/second_floor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\toolsprites\\second_floor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sprites/UI/crosshair.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\UI\\crosshair.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
   },
-  "objects": [],
+  "objects": [
+    {
+      "name": "crosshair",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "sprites\\UI\\crosshair.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 12,
+                    "y": 12
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "objectsGroups": [
     {
       "name": "Options",
@@ -567,38 +661,48 @@
     },
     {
       "name": "drawToolSprites",
-      "type": "string",
-      "value": "0"
+      "type": "number",
+      "value": 0
     },
     {
       "name": "showDebugMenu",
-      "type": "string",
-      "value": "0"
+      "type": "number",
+      "value": 0
     },
     {
       "name": "showCursor",
-      "type": "string",
-      "value": "1"
+      "type": "number",
+      "value": 1
     },
     {
       "name": "enableOptions",
-      "type": "string",
-      "value": "0"
+      "type": "number",
+      "value": 0
     },
     {
       "name": "isPaused",
-      "type": "string",
-      "value": "0"
+      "type": "number",
+      "value": 0
     },
     {
       "name": "useKeyboard",
-      "type": "string",
-      "value": "1"
+      "type": "number",
+      "value": 1
     },
     {
       "name": "mouseCamera",
       "type": "string",
       "value": "0"
+    },
+    {
+      "name": "isFullscreened",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "allowMouseCamera",
+      "type": "string",
+      "value": "1"
     }
   ],
   "layouts": [
@@ -671,6 +775,15 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "GeneralUI"
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -705,6 +818,30 @@
               "parameters": [
                 "",
                 "\"splashtime\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetWindowSize"
+              },
+              "parameters": [
+                "",
+                "1920",
+                "1080",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetAdaptGameResolutionAtRuntime"
+              },
+              "parameters": [
+                "",
+                "yes"
               ],
               "subInstructions": []
             }
@@ -879,7 +1016,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "Tab Text",
           "locked": false,
           "name": "options",
           "persistentUuid": "8dd26d02-342a-44d1-b74e-567276e45027",
@@ -895,7 +1032,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "Tab Text",
           "locked": false,
           "name": "quit",
           "persistentUuid": "be748b9e-7cfe-46b9-8c77-3eeac78c2c14",
@@ -1689,6 +1826,15 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "GeneralUI"
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2066,6 +2212,14 @@
                 "0"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -2294,6 +2448,17 @@
           "visibility": true,
           "cameras": [],
           "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 10971384,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "General UI",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
@@ -2486,6 +2651,15 @@
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "GeneralUI"
+        },
         {
           "disabled": false,
           "folded": false,
@@ -2880,6 +3054,17 @@
           "visibility": true,
           "cameras": [],
           "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 9189728,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "General UI",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": [
@@ -2903,7 +3088,7 @@
       "title": "Testing Area",
       "v": 125,
       "uiSettings": {
-        "grid": false,
+        "grid": true,
         "gridB": 255,
         "gridG": 180,
         "gridHeight": 48,
@@ -2911,9 +3096,9 @@
         "gridOffsetY": 0,
         "gridR": 158,
         "gridWidth": 48,
-        "snap": false,
+        "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.6199999999999997
+        "zoomFactor": 0.5999999999999996
       },
       "objectsGroups": [
         {
@@ -2945,6 +3130,21 @@
             },
             {
               "name": "clip_both"
+            },
+            {
+              "name": "trigger_both"
+            },
+            {
+              "name": "trigger_1st_floor"
+            },
+            {
+              "name": "trigger_2nd_floor"
+            },
+            {
+              "name": "button"
+            },
+            {
+              "name": "second_floor"
             }
           ]
         }
@@ -3003,8 +3203,8 @@
           "name": "Player",
           "persistentUuid": "34310cd7-c2e1-48f4-a17e-3960d36e9557",
           "width": 0,
-          "x": 816,
-          "y": 432,
+          "x": 720,
+          "y": 480,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -3187,7 +3387,7 @@
           "name": "FastPathNPC",
           "persistentUuid": "68b67213-79bd-494b-9a0b-2542c868657e",
           "width": 0,
-          "x": 576,
+          "x": 912,
           "y": 192,
           "zOrder": 11,
           "numberProperties": [],
@@ -3254,22 +3454,6 @@
           "x": 432,
           "y": 336,
           "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 768,
-          "layer": "",
-          "locked": false,
-          "name": "first_floor",
-          "persistentUuid": "9327809c-8cc4-42ba-adfd-6b122f3b0131",
-          "width": 1632,
-          "x": 144,
-          "y": 144,
-          "zOrder": -1,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3462,6 +3646,86 @@
           "x": 144,
           "y": 48,
           "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "trigger_both",
+          "persistentUuid": "c7a45ed2-4d67-44c0-a095-0d1075d83758",
+          "width": 144,
+          "x": 624,
+          "y": 624,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "trigger_1st_floor",
+          "persistentUuid": "c46216a4-c9a9-46b4-bcb9-2504897ec10b",
+          "width": 144,
+          "x": 1344,
+          "y": 432,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "trigger_2nd_floor",
+          "persistentUuid": "08671470-30e3-4790-b28b-eac4ca66026b",
+          "width": 96,
+          "x": 1584,
+          "y": 672,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "persistentUuid": "394c109a-3ffa-407f-9769-adebfa165446",
+          "width": 48,
+          "x": 1248,
+          "y": 240,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "second_floor_example",
+          "persistentUuid": "c2a86706-4953-467f-ac3e-94763ed895fc",
+          "width": 240,
+          "x": 1440,
+          "y": 432,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4042,6 +4306,16 @@
         },
         {
           "height": 48,
+          "name": "clip_both",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\clip.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "height": 48,
           "name": "clip_1st_floor",
           "tags": "",
           "texture": "sprites\\toolsprites\\clip_floor_one.png",
@@ -4073,16 +4347,6 @@
               "impassable": true
             }
           ]
-        },
-        {
-          "height": 48,
-          "name": "clip_both",
-          "tags": "",
-          "texture": "sprites\\toolsprites\\clip.png",
-          "type": "TiledSpriteObject::TiledSprite",
-          "width": 48,
-          "variables": [],
-          "behaviors": []
         },
         {
           "name": "PathNPCDestination",
@@ -4384,28 +4648,13 @@
         },
         {
           "height": 48,
-          "name": "first_floor",
+          "name": "second_floor",
           "tags": "",
-          "texture": "sprites\\first_floor.png",
+          "texture": "sprites\\toolsprites\\second_floor.png",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 48,
           "variables": [],
           "behaviors": []
-        },
-        {
-          "height": 48,
-          "name": "second_floor",
-          "tags": "",
-          "texture": "sprites\\second_floor.png",
-          "type": "TiledSpriteObject::TiledSprite",
-          "width": 48,
-          "variables": [],
-          "behaviors": [
-            {
-              "name": "Tween",
-              "type": "Tween::TweenBehavior"
-            }
-          ]
         },
         {
           "name": "mainmenu",
@@ -4521,6 +4770,61 @@
               ]
             }
           ]
+        },
+        {
+          "height": 48,
+          "name": "trigger_both",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\trigger.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "height": 48,
+          "name": "trigger_1st_floor",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\trigger_floor_one.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "height": 48,
+          "name": "trigger_2nd_floor",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\trigger_floor_two.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "height": 48,
+          "name": "button",
+          "tags": "",
+          "texture": "sprites\\toolsprites\\button.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": []
+        },
+        {
+          "height": 48,
+          "name": "second_floor_example",
+          "tags": "",
+          "texture": "sprites\\second_floor.png",
+          "type": "TiledSpriteObject::TiledSprite",
+          "width": 48,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ]
         }
       ],
       "events": [
@@ -4559,6 +4863,84 @@
             "includeConfig": 0
           },
           "target": "ToolSprites"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "crosshair",
+                "0",
+                "0",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeLayer"
+              },
+              "parameters": [
+                "crosshair",
+                "\"General UI\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreX"
+              },
+              "parameters": [
+                "crosshair",
+                "=",
+                "MouseX()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreY"
+              },
+              "parameters": [
+                "crosshair",
+                "=",
+                "MouseY()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         }
       ],
       "layers": [
@@ -4612,6 +4994,17 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "name": "Debug Layer",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 10945888,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "General UI",
           "visibility": true,
           "cameras": [],
           "effects": []
@@ -6577,7 +6970,7 @@
           "variables": [],
           "behaviors": [],
           "content": {
-            "text": "[b]Credits:[/b]\nProgramming:\nAstronaronic\n\nGraphics:\nAstronaronic\nKenney (kenney.nl)\n\nFont:\nCopyright © 2020, Braille Institute of America, Inc., https://www.brailleinstitute.org/freefont with\nReserved Typeface Name Atkinson Hyperlegible Font.\nFor font EULA, see fonts folder in source files.\n\nThanks:\nSilver-Streak, for helping me with problems",
+            "text": "[b]Credits:[/b]\nProgramming:\nAstronaronic\n\nGraphics:\nAstronaronic\nKenney (kenney.nl)\n\nFont:\nCopyright © 2020, Braille Institute of America, Inc., https://www.brailleinstitute.org/freefont with\nReserved Typeface Name Atkinson Hyperlegible Font.\nFor font EULA, see fonts folder in source files.\n\nThanks:\nSilver-Streak\nGreench",
             "opacity": 255,
             "fontSize": 50,
             "visible": true,
@@ -6606,6 +6999,15 @@
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "GeneralUI"
+        },
         {
           "disabled": false,
           "folded": false,
@@ -6675,6 +7077,17 @@
             }
           ],
           "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 7015160,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "General UI",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
         }
       ],
       "behaviorsSharedData": []
@@ -6717,6 +7130,19 @@
                 "AnxietyText",
                 "=",
                 "\"Anxiety: \" + ToString(trunc(Player.Variable(AnxietyLevel) * 10)/10)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreAutour"
+              },
+              "parameters": [
+                "cameraMove",
+                "Player",
+                "Player.DistanceToPosition(MouseX(), MouseY())*0.25",
+                "Player.AngleToPosition(MouseX(), MouseY())"
               ],
               "subInstructions": []
             }
@@ -6780,7 +7206,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "WASD",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6973,6 +7399,18 @@
                         "0"
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "VarGlobal"
+                      },
+                      "parameters": [
+                        "allowMouseCamera",
+                        "=",
+                        "1"
+                      ],
+                      "subInstructions": []
                     }
                   ],
                   "actions": [
@@ -7004,7 +7442,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Controller",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7035,6 +7473,18 @@
                   },
                   "parameters": [
                     "useKeyboard",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "allowMouseCamera",
                     "=",
                     "0"
                   ],
@@ -7222,6 +7672,18 @@
                     "0"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "allowMouseCamera",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "actions": [],
@@ -7386,17 +7848,6 @@
           "conditions": [
             {
               "type": {
-                "inverted": true,
-                "value": "TopDownMovementBehavior::IsMoving"
-              },
-              "parameters": [
-                "Player",
-                "TopDownMovement"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
                 "inverted": false,
                 "value": "VarGlobal"
               },
@@ -7430,33 +7881,173 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "allowMouseCamera",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
             }
           ],
           "actions": [
             {
               "type": {
                 "inverted": false,
-                "value": "MettreAutour"
+                "value": "SetCameraX"
               },
               "parameters": [
-                "cameraMove",
-                "Player",
-                "Player.DistanceToPosition(MouseX(), MouseY())*0.25",
-                "Player.AngleToPosition(MouseX(), MouseY())"
+                "",
+                "=",
+                "lerp(CameraX(), cameraMove.X(), Player.Variable(CameraSmoothTime))",
+                "\"\"",
+                "0"
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "CentreCamera"
+                "value": "SetCameraY"
               },
               "parameters": [
                 "",
-                "cameraMove",
+                "=",
+                "lerp(CameraY(), cameraMove.Y(), Player.Variable(CameraSmoothTime))",
+                "\"\"",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetCameraX"
+              },
+              "parameters": [
                 "",
+                "=",
+                "lerp(CameraX(), cameraMove.X(), Player.Variable(CameraSmoothTime))",
+                "\"General UI\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetCameraY"
+              },
+              "parameters": [
                 "",
+                "=",
+                "lerp(CameraY(), cameraMove.Y(), Player.Variable(CameraSmoothTime))",
+                "\"General UI\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "crosshair",
                 ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "TopDownMovementBehavior::IsMoving"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "mouseCamera",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "crosshair"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TopDownMovementBehavior::IsMoving"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "allowMouseCamera",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "mouseCamera",
+                "=",
+                "1"
               ],
               "subInstructions": []
             }
@@ -9730,17 +10321,6 @@
                 "0"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "HideLayer"
-              },
-              "parameters": [
-                "",
-                "\"Debug Layer\""
-              ],
-              "subInstructions": []
             }
           ],
           "events": []
@@ -9866,42 +10446,6 @@
                 "0"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ChangeLayerTimeScale"
-              },
-              "parameters": [
-                "",
-                "\"\"",
-                "1"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "showCursor",
-                "=",
-                "1"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "showDebugMenu",
-                "=",
-                "1"
-              ],
-              "subInstructions": []
             }
           ],
           "events": []
@@ -9928,14 +10472,26 @@
             {
               "type": {
                 "inverted": false,
+                "value": "ChangeLayerTimeScale"
+              },
+              "parameters": [
+                "",
+                "\"\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "SetCameraX"
               },
               "parameters": [
                 "",
                 "=",
                 "lerp(CameraX(), Player.X(), Player.Variable(CameraSmoothTime))",
-                "\"\"",
-                "0"
+                "",
+                ""
               ],
               "subInstructions": []
             },
@@ -10089,6 +10645,14 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -10098,7 +10662,7 @@
                 "value": "Tween::AddObjectOpacityTween"
               },
               "parameters": [
-                "second_floor",
+                "second_floor_example",
                 "Tween",
                 "\"player under second floor\"",
                 "100",
@@ -10141,6 +10705,14 @@
                 "1"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
             }
           ],
           "actions": [
@@ -10150,7 +10722,7 @@
                 "value": "Tween::AddObjectOpacityTween"
               },
               "parameters": [
-                "second_floor",
+                "second_floor_example",
                 "Tween",
                 "\"player under second floor\"",
                 "255",
@@ -10302,6 +10874,39 @@
       "lastChangeTimeStamp": 0,
       "name": "OptionsEvents",
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Checkbox::Checkbox::SetChecked"
+              },
+              "parameters": [
+                "mouseCameracheckbox",
+                "Checkbox",
+                "yes",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
         {
           "disabled": false,
           "folded": false,
@@ -10739,7 +11344,7 @@
                     "value": "ModVarGlobal"
                   },
                   "parameters": [
-                    "mouseCamera",
+                    "allowMouseCamera",
                     "=",
                     "1"
                   ],
@@ -10773,7 +11378,7 @@
                     "value": "ModVarGlobal"
                   },
                   "parameters": [
-                    "mouseCamera",
+                    "allowMouseCamera",
                     "=",
                     "0"
                   ],
@@ -10793,7 +11398,7 @@
                     "value": "VarGlobal"
                   },
                   "parameters": [
-                    "mouseCamera",
+                    "allowMouseCamera",
                     "=",
                     "1"
                   ],
@@ -10828,7 +11433,7 @@
                     "value": "VarGlobal"
                   },
                   "parameters": [
-                    "mouseCamera",
+                    "allowMouseCamera",
                     "=",
                     "0"
                   ],
@@ -10855,9 +11460,564 @@
           ]
         }
       ]
+    },
+    {
+      "associatedLayout": "Menu",
+      "lastChangeTimeStamp": 0,
+      "name": "GeneralUI",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "crosshair",
+                "MouseX()",
+                "MouseY()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeLayer"
+              },
+              "parameters": [
+                "crosshair",
+                "\"General UI\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "CacheSouris"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Toujours"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "crosshair",
+                "=",
+                "MouseX()",
+                "=",
+                "MouseY()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "isFullscreened",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AdvancedWindow::SetResizable"
+              },
+              "parameters": [
+                "yes"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AdvancedWindow::SetMaximizable"
+              },
+              "parameters": [
+                "yes"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "isFullscreened",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AdvancedWindow::SetResizable"
+              },
+              "parameters": [
+                "no"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AdvancedWindow::SetMaximizable"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "IsFullScreen"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "isFullscreened",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "IsFullScreen"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "isFullscreened",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
     }
   ],
   "eventsFunctionsExtensions": [
+    {
+      "author": "@Bouh, @arthuro555",
+      "description": "Provides an action to change the type of the cursor, and a behavior to change the cursor when an object is hovered.\n\nFor the behavior, find the list of cursors here: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor",
+      "extensionNamespace": "",
+      "fullName": "Cursor type",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWN1cnNvci1kZWZhdWx0LW91dGxpbmUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTAuMDcsMTQuMjdDMTAuNTcsMTQuMDMgMTEuMTYsMTQuMjUgMTEuNCwxNC43NUwxMy43LDE5Ljc0TDE1LjUsMTguODlMMTMuMTksMTMuOTFDMTIuOTUsMTMuNDEgMTMuMTcsMTIuODEgMTMuNjcsMTIuNThMMTMuOTUsMTIuNUwxNi4yNSwxMi4wNUw4LDUuMTJWMTUuOUw5LjgyLDE0LjQzTDEwLjA3LDE0LjI3TTEzLjY0LDIxLjk3QzEzLjE0LDIyLjIxIDEyLjU0LDIyIDEyLjMxLDIxLjVMMTAuMTMsMTYuNzZMNy42MiwxOC43OEM3LjQ1LDE4LjkyIDcuMjQsMTkgNywxOUExLDEgMCAwLDEgNiwxOFYzQTEsMSAwIDAsMSA3LDJDNy4yNCwyIDcuNDcsMi4wOSA3LjY0LDIuMjNMNy42NSwyLjIyTDE5LjE0LDExLjg2QzE5LjU3LDEyLjIyIDE5LjYyLDEyLjg1IDE5LjI3LDEzLjI3QzE5LjEyLDEzLjQ1IDE4LjkxLDEzLjU3IDE4LjcsMTMuNjFMMTUuNTQsMTQuMjNMMTcuNzQsMTguOTZDMTgsMTkuNDYgMTcuNzYsMjAuMDUgMTcuMjYsMjAuMjhMMTMuNjQsMjEuOTdaIiAvPjwvc3ZnPg==",
+      "name": "CursorType",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/cursor-default-outline.svg",
+      "shortDescription": "Provides an action to change the type of the cursor, and a behavior to change the cursor when an object is hovered.",
+      "version": "0.0.2",
+      "tags": [
+        "cursor",
+        "javascript",
+        "desktop"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "Change the type of the cursor.",
+          "fullName": "Change the type of the cursor",
+          "functionType": "Action",
+          "name": "ChangeCursorType",
+          "private": false,
+          "sentence": "Set cursor to _PARAM1_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Set as variable instead of directly setting as a CursorHover behavior can override it.\nBy using a variable, we ensure to be able to change it back to that \"default\" after the override is over.",
+              "comment2": ""
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobalTxt"
+                  },
+                  "parameters": [
+                    "__CursorType_defaultCursor",
+                    "=",
+                    "GetArgumentAsString(\"cursor_type\")"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "default",
+              "description": "The new cursor type",
+              "longDescription": "List of available cursors on https://developer.mozilla.org/en-US/docs/Web/CSS/cursor",
+              "name": "cursor_type",
+              "optional": false,
+              "supplementaryInformation": "[\"auto\", \"default\", \"none\", \"context-menu\", \"help\", \"pointer\", \"progress\", \"wait\", \"cell\", \"crosshair\", \"text\", \"vertical-text\", \"alias\", \"copy\", \"move\", \"no-drop\", \"not-allowed\", \"grab\", \"grabbing\", \"all-scroll\", \"col-resize\", \"row-resize\", \"n-resize\", \"e-resize\", \"s-resize\", \"w-resize\", \"ne-resize\", \"nw-resize\", \"se-resize\", \"sw-resize\", \"ew-resize\", \"ns-resize\", \"nesw-resize\", \"nwse-resize\", \"zoom-in\", \"zoom-out\"]",
+              "type": "stringWithSelector"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onScenePreEvents",
+          "private": false,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Reset ordering as the object with highest Z-Order might not exist anymore or be not be hovered anymore.",
+              "comment2": ""
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "__CursorType_zOrderSorting",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Set default value of the default cursor if the variable has just been created",
+              "comment2": ""
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarSceneTxt"
+                  },
+                  "parameters": [
+                    "__CursorType_defaultCursor",
+                    "=",
+                    "\"0\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobalTxt"
+                  },
+                  "parameters": [
+                    "__CursorType_defaultCursor",
+                    "=",
+                    "\"default\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "// Reset to default cursor\nruntimeScene.getGame().getRenderer().getCanvas().style.cursor =\n    runtimeScene\n        .getGame()\n        .getVariables()\n        .get(\"__CursorType_defaultCursor\")\n        .getAsString();\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [
+        {
+          "description": "Change the cursor appearence when the object is hovered (on Windows, macOS or Linux).",
+          "fullName": "Custom cursor when hovered",
+          "name": "CursorHover",
+          "objectType": "",
+          "eventsFunctions": [
+            {
+              "description": "",
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "private": false,
+              "sentence": "",
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Check the z Order to ensure the cursor shown is the one from the foremost object ",
+                  "comment2": ""
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Plan"
+                      },
+                      "parameters": [
+                        "Object",
+                        ">",
+                        "GlobalVariable(__CursorType_zOrderSorting)"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "Object",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarGlobal"
+                      },
+                      "parameters": [
+                        "__CursorType_zOrderSorting",
+                        "=",
+                        "Object.ZOrder()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::JsCode",
+                      "inlineCode": "// Set cursor to behavior property cursor_type\nruntimeScene\n    .getGame()\n    .getRenderer()\n    .getCanvas()\n    .style\n    .cursor = objects[0]\n        .getBehavior(\n            eventsFunctionContext.getBehaviorName(\"Behavior\")\n        )\n        ._getcursor_type();\n",
+                      "parameterObjects": "Object",
+                      "useStrict": true,
+                      "eventsSheetExpanded": false
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Object",
+                  "longDescription": "",
+                  "name": "Object",
+                  "optional": false,
+                  "supplementaryInformation": "",
+                  "type": "object"
+                },
+                {
+                  "codeOnly": false,
+                  "defaultValue": "",
+                  "description": "Behavior",
+                  "longDescription": "",
+                  "name": "Behavior",
+                  "optional": false,
+                  "supplementaryInformation": "CursorType::CursorHover",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [
+            {
+              "value": "default",
+              "type": "String",
+              "label": "The cursor type",
+              "description": "See https://developer.mozilla.org/en-US/docs/Web/CSS/cursor for a list of possible cursors.",
+              "extraInformation": [],
+              "hidden": false,
+              "name": "cursor_type"
+            }
+          ]
+        }
+      ]
+    },
     {
       "author": "Bouh",
       "description": "Add support for gamepads (or other controllers) to your game, giving access to information such as button presses, axis positions, axis force, trigger pressure, deadzone for each gamepad, etc...\n\nUp to 4 gamepads can be connected: for each condition or expression, you'll have to enter the index of the gamepad to read. This is 1, 2,3 or 4.",
