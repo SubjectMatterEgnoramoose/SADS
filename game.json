@@ -15,9 +15,9 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "useExternalSourceFiles": false,
-    "version": "0.0.3",
+    "version": "0.0.6",
     "name": "SADS",
-    "author": "Astronaronic/Spiffy",
+    "author": "Astronaronic",
     "windowWidth": 1920,
     "windowHeight": 1080,
     "latestCompilationDirectory": "",
@@ -144,42 +144,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "campaignbutton-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "campaignbutton-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "freeplaybutton-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "freeplaybutton-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "optionsbutton-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "optionsbutton-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "quitbutton-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "quitbutton-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "difficulty-1.png",
         "kind": "image",
         "metadata": "",
@@ -231,15 +195,6 @@
         "name": "savebutton-1.png",
         "smoothed": true,
         "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "NewObject-1-0.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1-0.png",
-        "smoothed": true,
-        "userAdded": true
       },
       {
         "alwaysLoaded": false,
@@ -333,15 +288,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "mondaybutton-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "mondaybutton-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "sprites/UI/AnxietyBar.png",
         "kind": "image",
         "metadata": "",
@@ -398,15 +344,6 @@
         "kind": "image",
         "metadata": "",
         "name": "sprites\\toolsprites\\z_order_down.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/first_floor.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\first_floor.png",
         "smoothed": true,
         "userAdded": true
       },
@@ -470,15 +407,6 @@
         "name": "sprites\\UI\\anxietybar_bg.png",
         "smoothed": true,
         "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "cursor-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "cursor-1.png",
-        "smoothed": true,
-        "userAdded": false
       },
       {
         "alwaysLoaded": false,
@@ -662,28 +590,10 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "sprites/UI/MainMenu/tab_hover-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\MainMenu\\tab_hover-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "sprites/UI/MainMenu/tab_selected.png",
         "kind": "image",
         "metadata": "",
         "name": "sprites\\UI\\MainMenu\\tab_selected.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/MainMenu/exit_boxAsset 1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\MainMenu\\exit_boxAsset 1.png",
         "smoothed": true,
         "userAdded": false
       },
@@ -704,24 +614,6 @@
         "name": "sprites\\UI\\MainMenu\\exit_box_selection.png",
         "smoothed": true,
         "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "banner.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "banner.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/UI/MainMenu/gradient_background.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\UI\\MainMenu\\gradient_background.png",
-        "smoothed": true,
-        "userAdded": true
       },
       {
         "alwaysLoaded": false,
@@ -935,6 +827,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
@@ -1176,10 +1069,11 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.5399999999999996
+        "zoomFactor": 0.35999999999999943
       },
       "objectsGroups": [
         {
@@ -1217,6 +1111,11 @@
           "name": "interactable",
           "type": "string",
           "value": "1"
+        },
+        {
+          "name": "lastTabSelected",
+          "type": "string",
+          "value": "0"
         }
       ],
       "instances": [
@@ -1229,7 +1128,7 @@
           "name": "freeplay",
           "persistentUuid": "1f42898b-ca5b-4448-a6c2-f48b7030a3ac",
           "width": 0,
-          "x": 445,
+          "x": 419,
           "y": 110,
           "zOrder": 2,
           "numberProperties": [],
@@ -1245,7 +1144,7 @@
           "name": "settings",
           "persistentUuid": "8dd26d02-342a-44d1-b74e-567276e45027",
           "width": 0,
-          "x": 1255,
+          "x": 1229,
           "y": 110,
           "zOrder": 3,
           "numberProperties": [],
@@ -1277,7 +1176,7 @@
           "name": "campaign",
           "persistentUuid": "5e8a587e-8cda-4436-98d1-a48d77544f12",
           "width": 0,
-          "x": 40,
+          "x": 14,
           "y": 110,
           "zOrder": 2,
           "numberProperties": [],
@@ -1293,7 +1192,7 @@
           "name": "scores",
           "persistentUuid": "544cf764-97e8-4ae7-8610-5a7e18b087e4",
           "width": 0,
-          "x": 850,
+          "x": 824,
           "y": 110,
           "zOrder": 7,
           "numberProperties": [],
@@ -1309,7 +1208,7 @@
           "name": "campaign_hover",
           "persistentUuid": "b24db4fb-8df2-4bf9-9a8f-74c7ab00bba1",
           "width": 0,
-          "x": 46,
+          "x": 20,
           "y": 110,
           "zOrder": 9,
           "numberProperties": [],
@@ -1325,7 +1224,7 @@
           "name": "freeplay_hover",
           "persistentUuid": "28c3ca60-da9a-40a8-a385-f7e363ffbb5b",
           "width": 0,
-          "x": 445,
+          "x": 419,
           "y": 110,
           "zOrder": 10,
           "numberProperties": [],
@@ -1341,7 +1240,7 @@
           "name": "scores_hover",
           "persistentUuid": "1308e02b-df19-4a60-bcf2-619a14015fab",
           "width": 0,
-          "x": 845,
+          "x": 819,
           "y": 110,
           "zOrder": 11,
           "numberProperties": [],
@@ -1357,7 +1256,7 @@
           "name": "settings_hover",
           "persistentUuid": "28f9a58a-b737-4177-ad76-28d60a653b8a",
           "width": 0,
-          "x": 1245,
+          "x": 1219,
           "y": 110,
           "zOrder": 12,
           "numberProperties": [],
@@ -1373,7 +1272,7 @@
           "name": "exit_hover",
           "persistentUuid": "593261dd-1e9d-4e6a-aa58-bbdf296b0d15",
           "width": 0,
-          "x": 1645,
+          "x": 1619,
           "y": 110,
           "zOrder": 13,
           "numberProperties": [],
@@ -1389,7 +1288,7 @@
           "name": "campaign_container",
           "persistentUuid": "b2ccc6d7-3f9e-402f-a7b3-b45d25565ac8",
           "width": 0,
-          "x": 959,
+          "x": -950,
           "y": 600,
           "zOrder": 14,
           "numberProperties": [],
@@ -1405,8 +1304,8 @@
           "name": "background",
           "persistentUuid": "5e88c9bc-d46f-4f5f-8d4b-10cb95918ea5",
           "width": 0,
-          "x": -9,
-          "y": 2,
+          "x": 0,
+          "y": 0,
           "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
@@ -1818,13 +1717,13 @@
           "variables": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
-              "topEdgeAnchor": 1,
-              "type": "AnchorBehavior::AnchorBehavior"
+              "topEdgeAnchor": 1
             },
             {
               "name": "Tween",
@@ -2569,7 +2468,12 @@
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
           "animations": [
             {
               "name": "",
@@ -2730,7 +2634,12 @@
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
           "animations": [
             {
               "name": "",
@@ -2743,11 +2652,22 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "sprites\\UI\\MainMenu\\exit_box.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "cancel",
+                          "x": 0,
+                          "y": 361
+                        },
+                        {
+                          "name": "exit",
+                          "x": 395,
+                          "y": 361
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 387.5,
+                        "y": 180
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -2791,7 +2711,7 @@
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 80
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -2835,7 +2755,7 @@
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
-                        "y": 0
+                        "y": 80
                       },
                       "centerPoint": {
                         "automatic": true,
@@ -3101,20 +3021,6 @@
                 "value": "MettreXY"
               },
               "parameters": [
-                "campaign_container",
-                "=",
-                "SceneWindowWidth() /2",
-                "=",
-                "600"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MettreXY"
-              },
-              "parameters": [
                 "monday",
                 "=",
                 "campaign_container.X(\"monday\")",
@@ -3176,6 +3082,162 @@
                 "campaign_container.X(\"friday\")",
                 "=",
                 "campaign_container.Y(\"friday\")"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "background",
+                "=",
+                "0",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "background",
+                "=",
+                "SceneWindowWidth()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeHeight"
+              },
+              "parameters": [
+                "background",
+                "=",
+                "SceneWindowHeight()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "selectedtab",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectPositionXTween"
+              },
+              "parameters": [
+                "campaign_container",
+                "Tween",
+                "\"campaign container move to centre\"",
+                "SceneWindowWidth() /2",
+                "\"linear\"",
+                "100",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "monday",
+                "Tween",
+                "\"monday tab switch opacity 255\"",
+                "255",
+                "\"linear\"",
+                "50",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "tuesday",
+                "Tween",
+                "\"tuesday tab switch opacity 255\"",
+                "255",
+                "\"linear\"",
+                "50",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "thursday",
+                "Tween",
+                "\"thursday tab switch opacity 255\"",
+                "255",
+                "\"linear\"",
+                "50",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "friday",
+                "Tween",
+                "\"friday tab switch opacity 255\"",
+                "255",
+                "\"linear\"",
+                "50",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "wednesday",
+                "Tween",
+                "\"wednesday tab switch opacity 255\"",
+                "255",
+                "\"linear\"",
+                "50",
+                ""
               ],
               "subInstructions": []
             }
@@ -3365,6 +3427,45 @@
                   "conditions": [
                     {
                       "type": {
+                        "inverted": true,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "campaign_hover",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "campaign_hover",
+                        "Tween",
+                        "\"campaign opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "inverted": false,
                         "value": "SourisSurObjet"
                       },
@@ -3502,6 +3603,45 @@
                       "events": []
                     }
                   ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "freeplay_hover",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "freeplay_hover",
+                        "Tween",
+                        "\"freeplay opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 },
                 {
                   "disabled": false,
@@ -3655,6 +3795,22 @@
                       },
                       "parameters": [
                         "editornotavailable",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "scores_hover",
+                        "Tween",
+                        "\"score opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -3814,6 +3970,45 @@
                   "conditions": [
                     {
                       "type": {
+                        "inverted": true,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "settings_hover",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "settings_hover",
+                        "Tween",
+                        "\"settings opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "inverted": false,
                         "value": "SourisSurObjet"
                       },
@@ -3951,6 +4146,45 @@
                       "events": []
                     }
                   ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "exit_hover",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "exit_hover",
+                        "Tween",
+                        "\"exit opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
                 }
               ]
             }
@@ -3997,9 +4231,9 @@
                     "monday",
                     "Tween",
                     "\"monday hover scale 1.05\"",
-                    "1.05",
-                    "1.05",
-                    "\"linear\"",
+                    "1.025",
+                    "1.025",
+                    "\"easeInQuad\"",
                     "50",
                     ""
                   ],
@@ -4034,9 +4268,9 @@
                         "monday",
                         "Tween",
                         "\"monday hover click scale\"",
-                        "0.95",
-                        "0.95",
-                        "\"linear\"",
+                        "0.975",
+                        "0.975",
+                        "\"easeInQuad\"",
                         "50",
                         ""
                       ],
@@ -4119,8 +4353,8 @@
                     "\"monday non hover scale 1\"",
                     "1",
                     "1",
-                    "\"linear\"",
-                    "50",
+                    "\"easeInQuad\"",
+                    "100",
                     ""
                   ],
                   "subInstructions": []
@@ -4171,9 +4405,9 @@
                     "tuesday",
                     "Tween",
                     "\"tuesday hover scale 1.05\"",
-                    "1.05",
-                    "1.05",
-                    "\"linear\"",
+                    "1.025",
+                    "1.025",
+                    "\"easeInQuad\"",
                     "50",
                     ""
                   ],
@@ -4208,9 +4442,9 @@
                         "tuesday",
                         "Tween",
                         "\"tuesday hover click scale\"",
-                        "0.95",
-                        "0.95",
-                        "\"linear\"",
+                        "0.975",
+                        "0.975",
+                        "\"easeInQuad\"",
                         "50",
                         ""
                       ],
@@ -4280,8 +4514,8 @@
                     "\"tuesday non hover scale 1\"",
                     "1",
                     "1",
-                    "\"linear\"",
-                    "50",
+                    "\"easeInQuad\"",
+                    "100",
                     ""
                   ],
                   "subInstructions": []
@@ -4332,9 +4566,9 @@
                     "wednesday",
                     "Tween",
                     "\"wednesday hover scale 1.05\"",
-                    "1.05",
-                    "1.05",
-                    "\"linear\"",
+                    "1.025",
+                    "1.025",
+                    "\"easeInQuad\"",
                     "50",
                     ""
                   ],
@@ -4369,9 +4603,9 @@
                         "wednesday",
                         "Tween",
                         "\"wednesday hover click scale\"",
-                        "0.95",
-                        "0.95",
-                        "\"linear\"",
+                        "0.975",
+                        "0.975",
+                        "\"easeInQuad\"",
                         "50",
                         ""
                       ],
@@ -4441,8 +4675,8 @@
                     "\"wednesday non hover scale 1\"",
                     "1",
                     "1",
-                    "\"linear\"",
-                    "50",
+                    "\"easeInQuad\"",
+                    "100",
                     ""
                   ],
                   "subInstructions": []
@@ -4493,9 +4727,9 @@
                     "thursday",
                     "Tween",
                     "\"thursday hover scale 1.05\"",
-                    "1.05",
-                    "1.05",
-                    "\"linear\"",
+                    "1.025",
+                    "1.025",
+                    "\"easeInQuad\"",
                     "50",
                     ""
                   ],
@@ -4530,9 +4764,9 @@
                         "thursday",
                         "Tween",
                         "\"thursday hover click scale\"",
-                        "0.95",
-                        "0.95",
-                        "\"linear\"",
+                        "0.975",
+                        "0.975",
+                        "\"easeInQuad\"",
                         "50",
                         ""
                       ],
@@ -4602,8 +4836,8 @@
                     "\"thursday non hover scale 1\"",
                     "1",
                     "1",
-                    "\"linear\"",
-                    "50",
+                    "\"easeInQuad\"",
+                    "100",
                     ""
                   ],
                   "subInstructions": []
@@ -4654,9 +4888,9 @@
                     "friday",
                     "Tween",
                     "\"friday hover scale 1.05\"",
-                    "1.05",
-                    "1.05",
-                    "\"linear\"",
+                    "1.025",
+                    "1.025",
+                    "\"easeInQuad\"",
                     "50",
                     ""
                   ],
@@ -4691,9 +4925,9 @@
                         "friday",
                         "Tween",
                         "\"friday hover click scale\"",
-                        "0.95",
-                        "0.95",
-                        "\"linear\"",
+                        "0.975",
+                        "0.975",
+                        "\"easeInQuad\"",
                         "50",
                         ""
                       ],
@@ -4763,8 +4997,8 @@
                     "\"friday non hover scale 1\"",
                     "1",
                     "1",
-                    "\"linear\"",
-                    "50",
+                    "\"easeInQuad\"",
+                    "100",
                     ""
                   ],
                   "subInstructions": []
@@ -4781,7 +5015,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Selected tab",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -4934,22 +5168,89 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "MettreY"
+                    "value": "Cache"
                   },
                   "parameters": [
-                    "tab_selected",
-                    "=",
-                    "campaign_hover.Y()"
+                    "campaign_container"
                   ],
                   "subInstructions": []
                 },
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Cache"
+                    "value": "Tween::AddObjectScaleTween"
                   },
                   "parameters": [
-                    "campaign_container"
+                    "exit_box",
+                    "Tween",
+                    "\"exit box hover scale 0.9\"",
+                    "0.9",
+                    "0.9",
+                    "\"linear\"",
+                    "100",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "exit_box",
+                    "Tween",
+                    "\"exit box hover opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "lastTabSelected",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "selectedtab",
+                    "=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "tab_selected",
+                    "=",
+                    "campaign_hover.Y()"
                   ],
                   "subInstructions": []
                 },
@@ -4994,10 +5295,15 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Delete"
+                    "value": "Tween::AddObjectPositionXTween"
                   },
                   "parameters": [
-                    "Campaign",
+                    "campaign_container",
+                    "Tween",
+                    "\"campaign container move to left\"",
+                    "-950",
+                    "\"linear\"",
+                    "200",
                     ""
                   ],
                   "subInstructions": []
@@ -5005,67 +5311,193 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "HideLayer"
+                    "value": "Tween::AddObjectOpacityTween"
                   },
                   "parameters": [
-                    "",
-                    "\"Options\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Exit Box\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarGlobal"
-                  },
-                  "parameters": [
-                    "enableOptions",
-                    "=",
-                    "0"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "MettreY"
-                  },
-                  "parameters": [
-                    "tab_selected",
-                    "=",
-                    "freeplay_hover.Y()"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectPositionXTween"
-                  },
-                  "parameters": [
-                    "tab_selected",
+                    "monday",
                     "Tween",
-                    "\"freeplay selected\"",
-                    "freeplay_hover.X()",
+                    "\"monday tab switch opacity 0\"",
+                    "0",
                     "\"linear\"",
                     "50",
                     ""
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "tuesday",
+                    "Tween",
+                    "\"tuesday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "wednesday",
+                    "Tween",
+                    "\"wednesday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "thursday",
+                    "Tween",
+                    "\"thursday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "friday",
+                    "Tween",
+                    "\"friday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "lastTabSelected",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
                 }
               ],
-              "events": []
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "campaign_container",
+                        "<",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Campaign",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "HideLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Options\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "HideLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Exit Box\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarGlobal"
+                      },
+                      "parameters": [
+                        "enableOptions",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "tab_selected",
+                        "=",
+                        "freeplay_hover.Y()"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectPositionXTween"
+                      },
+                      "parameters": [
+                        "tab_selected",
+                        "Tween",
+                        "\"freeplay selected\"",
+                        "freeplay_hover.X()",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
             },
             {
               "disabled": false,
@@ -5089,10 +5521,15 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Delete"
+                    "value": "Tween::AddObjectPositionXTween"
                   },
                   "parameters": [
-                    "Campaign",
+                    "campaign_container",
+                    "Tween",
+                    "\"campaign container move to left\"",
+                    "-950",
+                    "\"linear\"",
+                    "200",
                     ""
                   ],
                   "subInstructions": []
@@ -5100,67 +5537,193 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "ShowLayer"
+                    "value": "Tween::AddObjectOpacityTween"
                   },
                   "parameters": [
-                    "",
-                    "\"Options\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Exit Box\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarGlobal"
-                  },
-                  "parameters": [
-                    "enableOptions",
-                    "=",
-                    "1"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "MettreY"
-                  },
-                  "parameters": [
-                    "tab_selected",
-                    "=",
-                    "settings_hover.Y()"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectPositionXTween"
-                  },
-                  "parameters": [
-                    "tab_selected",
+                    "monday",
                     "Tween",
-                    "\"settings selected\"",
-                    "settings_hover.X()",
+                    "\"monday tab switch opacity 0\"",
+                    "0",
                     "\"linear\"",
                     "50",
                     ""
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "tuesday",
+                    "Tween",
+                    "\"tuesday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "thursday",
+                    "Tween",
+                    "\"thursday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "friday",
+                    "Tween",
+                    "\"friday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "wednesday",
+                    "Tween",
+                    "\"wednesday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "lastTabSelected",
+                    "=",
+                    "2"
+                  ],
+                  "subInstructions": []
                 }
               ],
-              "events": []
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "campaign_container",
+                        "<",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Campaign",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ShowLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Options\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "HideLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Exit Box\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarGlobal"
+                      },
+                      "parameters": [
+                        "enableOptions",
+                        "=",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "tab_selected",
+                        "=",
+                        "settings_hover.Y()"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectPositionXTween"
+                      },
+                      "parameters": [
+                        "tab_selected",
+                        "Tween",
+                        "\"settings selected\"",
+                        "settings_hover.X()",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
             },
             {
               "disabled": false,
@@ -5184,67 +5747,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Campaign",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "HideLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Options\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ShowLayer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Exit Box\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "MettreY"
-                  },
-                  "parameters": [
-                    "tab_selected",
-                    "=",
-                    "exit_hover.Y()"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectPositionXTween"
-                  },
-                  "parameters": [
-                    "tab_selected",
-                    "Tween",
-                    "\"exit selected\"",
-                    "exit_hover.X()",
-                    "\"linear\"",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "ModVarScene"
                   },
                   "parameters": [
@@ -5257,31 +5759,344 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "EnableLayerEffect"
+                    "value": "Tween::AddObjectPositionXTween"
                   },
                   "parameters": [
-                    "",
-                    "\"Tab Text\"",
-                    "\"Blur\"",
-                    "yes"
+                    "campaign_container",
+                    "Tween",
+                    "\"campaign container move to left\"",
+                    "-950",
+                    "\"linear\"",
+                    "200",
+                    ""
                   ],
                   "subInstructions": []
                 },
                 {
                   "type": {
                     "inverted": false,
-                    "value": "EnableLayerEffect"
+                    "value": "Tween::AddObjectOpacityTween"
                   },
                   "parameters": [
-                    "",
-                    "\"\"",
-                    "\"Blur\"",
-                    "yes"
+                    "thursday",
+                    "Tween",
+                    "\"thursday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "monday",
+                    "Tween",
+                    "\"monday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "friday",
+                    "Tween",
+                    "\"friday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "wednesday",
+                    "Tween",
+                    "\"wednesday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "tuesday",
+                    "Tween",
+                    "\"tuesday tab switch opacity 0\"",
+                    "0",
+                    "\"linear\"",
+                    "50",
+                    ""
                   ],
                   "subInstructions": []
                 }
               ],
               "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PosX"
+                      },
+                      "parameters": [
+                        "campaign_container",
+                        "<",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Campaign",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "HideLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Options\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ShowLayer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Exit Box\""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "exit_message_hover",
+                        "Tween",
+                        "\"exit hover opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "cancel_hover",
+                        "Tween",
+                        "\"cancel hover opacity 0\"",
+                        "0",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectScaleTween"
+                      },
+                      "parameters": [
+                        "exit_box",
+                        "Tween",
+                        "\"exit box hover scale 0.9\"",
+                        "0.9",
+                        "0.9",
+                        "\"linear\"",
+                        "100",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectScaleTween"
+                      },
+                      "parameters": [
+                        "exit_box",
+                        "Tween",
+                        "\"exit box hover scale 1\"",
+                        "1",
+                        "1",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "tab_selected",
+                        "=",
+                        "exit_hover.Y()"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectPositionXTween"
+                      },
+                      "parameters": [
+                        "tab_selected",
+                        "Tween",
+                        "\"exit selected\"",
+                        "exit_hover.X()",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ModVarGlobal"
+                      },
+                      "parameters": [
+                        "enableOptions",
+                        "=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "EnableLayerEffect"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Tab Text\"",
+                        "\"Blur\"",
+                        "no"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "EnableLayerEffect"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"Blur\"",
+                        "no"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "exit_box",
+                        "Tween",
+                        "\"exit box hover opacity 255\"",
+                        "255",
+                        "\"linear\"",
+                        "50",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "exit_box",
+                        "=",
+                        "SceneWindowWidth() /2"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "cancel_hover",
+                        "=",
+                        "exit_box.X(\"cancel\")",
+                        "=",
+                        "exit_box.Y(\"cancel\")"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "exit_message_hover",
+                        "=",
+                        "exit_box.X(\"exit\")",
+                        "=",
+                        "exit_box.Y(\"exit\")"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
                 {
                   "disabled": false,
                   "folded": false,
@@ -5351,30 +6166,51 @@
                             "Left"
                           ],
                           "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
                         }
                       ],
                       "actions": [
                         {
                           "type": {
                             "inverted": false,
-                            "value": "ModVarScene"
+                            "value": "Tween::AddObjectScaleTween"
                           },
                           "parameters": [
-                            "selectedtab",
-                            "=",
-                            "0"
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
                           ],
                           "subInstructions": []
                         },
                         {
                           "type": {
                             "inverted": false,
-                            "value": "ModVarScene"
+                            "value": "Tween::AddObjectOpacityTween"
                           },
                           "parameters": [
-                            "interactable",
-                            "=",
-                            "1"
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
                           ],
                           "subInstructions": []
                         },
@@ -5401,6 +6237,262 @@
                             "\"Tab Text\"",
                             "\"Blur\"",
                             "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Tab Text\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "2"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Tab Text\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "=",
+                            "2"
                           ],
                           "subInstructions": []
                         }
@@ -5647,6 +6739,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": false,
         "windowMask": false,
@@ -6249,6 +7342,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 48,
         "snap": true,
         "windowMask": false,
@@ -8232,6 +9326,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
@@ -10099,6 +11194,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
@@ -14512,74 +15608,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Checkbox::Checkbox::IsChecked"
-                  },
-                  "parameters": [
-                    "mouseCameracheckbox",
-                    "Checkbox",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarGlobal"
-                  },
-                  "parameters": [
-                    "allowMouseCamera",
-                    "=",
-                    "1"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Checkbox::Checkbox::IsChecked"
-                  },
-                  "parameters": [
-                    "mouseCameracheckbox",
-                    "Checkbox",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ModVarGlobal"
-                  },
-                  "parameters": [
-                    "allowMouseCamera",
-                    "=",
-                    "0"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "VarGlobal"
                   },
                   "parameters": [
@@ -14615,6 +15643,40 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "Checkbox::Checkbox::IsChecked"
+                  },
+                  "parameters": [
+                    "mouseCameracheckbox",
+                    "Checkbox",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "allowMouseCamera",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "VarGlobal"
                   },
                   "parameters": [
@@ -14636,6 +15698,40 @@
                     "Checkbox",
                     "no",
                     ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Checkbox::Checkbox::IsChecked"
+                  },
+                  "parameters": [
+                    "mouseCameracheckbox",
+                    "Checkbox",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "allowMouseCamera",
+                    "=",
+                    "0"
                   ],
                   "subInstructions": []
                 }
@@ -25858,6 +26954,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
@@ -26101,6 +27198,7 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
@@ -26120,8 +27218,8 @@
           "name": "exit_box",
           "persistentUuid": "4fcb3719-ad7d-44d6-8400-58b47d3659c7",
           "width": 0,
-          "x": 576,
-          "y": 347,
+          "x": 964,
+          "y": 527,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -26152,8 +27250,8 @@
           "name": "exit_message_hover",
           "persistentUuid": "3a1d28cf-0c82-48d0-aae6-3b37abc6f320",
           "width": 0,
-          "x": 970,
-          "y": 629,
+          "x": 971,
+          "y": 628,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -26168,10 +27266,11 @@
         "gridOffsetX": 0,
         "gridOffsetY": 0,
         "gridR": 158,
+        "gridType": "rectangular",
         "gridWidth": 32,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.4599999999999996
+        "zoomFactor": 0.6799999999999997
       }
     }
   ],
