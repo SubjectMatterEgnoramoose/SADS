@@ -144,42 +144,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "difficulty-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "difficulty-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "easy-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "easy-1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "medium-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "medium-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "NewObject-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewObject-1.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "playtestbutton-1.png",
         "kind": "image",
         "metadata": "",
@@ -729,15 +693,6 @@
         "kind": "image",
         "metadata": "",
         "name": "sprites\\UI\\Options\\settings_options_selected.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "maps/9-patch.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "maps\\9-patch.png",
         "smoothed": true,
         "userAdded": true
       },
@@ -1864,6 +1819,22 @@
       "name": "difficultyDropdownSelection",
       "type": "string",
       "value": "0"
+    },
+    {
+      "name": "chosenLevel",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "levelTimes",
+      "type": "structure",
+      "children": [
+        {
+          "name": "mondayTime",
+          "type": "string",
+          "value": "0"
+        }
+      ]
     }
   ],
   "layouts": [
@@ -4222,6 +4193,28 @@
               ]
             }
           ]
+        },
+        {
+          "name": "bestTime",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "content": {
+            "text": "BEST TIME:",
+            "opacity": 255,
+            "fontSize": 30,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Bold-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
         }
       ],
       "events": [
@@ -4233,6 +4226,21 @@
             "includeConfig": 0
           },
           "target": "OptionsEvents"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Creates all the external layouts and objects needed for the start of the scene.",
+          "comment2": ""
         },
         {
           "disabled": false,
@@ -4407,6 +4415,21 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Making the hover sprites not blink when the scene starts",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4481,6 +4504,21 @@
             }
           ],
           "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Sets the position of objects every frame",
+          "comment2": ""
         },
         {
           "disabled": false,
@@ -4612,6 +4650,21 @@
             }
           ],
           "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "If interactable is 1, and the cursor clicks on the button, it changes the selected tab to a value. These values are used later because if we used the actions from those variables here then they will execute whenever the button is pressed, but since they're in the variable which is just being set from the button press, it will only do the actions once until it's changed from another tab press.",
+          "comment2": ""
         },
         {
           "colorB": 228,
@@ -5255,49 +5308,36 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
-          "name": "Monday",
+          "folded": false,
+          "name": "Campaign week buttons",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
               "disabled": false,
               "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "monday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "monday",
-                    "Tween",
-                    "\"monday hover scale 1.05\"",
-                    "1.025",
-                    "1.025",
-                    "\"easeInQuad\"",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Clicking a week button changes the variable \"chosenLevel\" to a value, which is then used in the Briefing scene and Main scene to set the map, and the external layout which is used for the actual level. This is so we don't need loads of global objects and events, the levels just inherit the objects from the Main scene.",
+              "comment2": ""
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "disabled": false,
+              "folded": false,
+              "name": "Monday",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "disabled": false,
@@ -5307,11 +5347,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "MouseButtonPressed"
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "monday",
                         "",
-                        "Left"
+                        "",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -5325,17 +5367,187 @@
                       "parameters": [
                         "monday",
                         "Tween",
-                        "\"monday hover click scale\"",
-                        "0.975",
-                        "0.975",
+                        "\"monday hover scale 1.05\"",
+                        "1.025",
+                        "1.025",
                         "\"easeInQuad\"",
                         "50",
                         ""
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "bestTime",
+                        "=",
+                        "monday.X() - 150",
+                        "=",
+                        "monday.Y() +  375"
+                      ],
+                      "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": [],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "bestTime",
+                            "monday.X() - 150",
+                            "monday.Y() +  375",
+                            "\"Tab Text\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BBText::SetOpacity"
+                          },
+                          "parameters": [
+                            "bestTime",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "bestTime",
+                            "Tween",
+                            "\"best time opacity 255 monday\"",
+                            "255",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "bestTime",
+                            "=",
+                            "\"Best time: \" + GlobalVariableString(levelTimes.mondayTime)"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "monday",
+                            "Tween",
+                            "\"monday hover click scale\"",
+                            "0.975",
+                            "0.975",
+                            "\"easeInQuad\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarGlobal"
+                          },
+                          "parameters": [
+                            "chosenLevel",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "\"Briefing\"",
+                            "yes"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 },
                 {
                   "disabled": false,
@@ -5344,13 +5556,23 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "MouseButtonReleased"
+                        "inverted": true,
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "monday",
                         "",
-                        "Left"
+                        "",
+                        ""
                       ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": [],
                       "subInstructions": []
                     }
                   ],
@@ -5358,120 +5580,86 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "Scene"
+                        "value": "Tween::AddObjectScaleTween"
                       },
                       "parameters": [
-                        "selectedtab",
-                        "\"Briefing\"",
-                        "yes"
+                        "monday",
+                        "Tween",
+                        "\"monday non hover scale 1\"",
+                        "1",
+                        "1",
+                        "\"easeInQuad\"",
+                        "100",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "bestTime",
+                        "Tween",
+                        "\"best time opacity 0 monday\"",
+                        "0",
+                        "\"linear\"",
+                        "100",
+                        ""
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BBText::IsOpacity"
+                          },
+                          "parameters": [
+                            "bestTime",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "bestTime",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 }
-              ]
+              ],
+              "parameters": []
             },
             {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
               "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "monday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "monday",
-                    "Tween",
-                    "\"monday non hover scale 1\"",
-                    "1",
-                    "1",
-                    "\"easeInQuad\"",
-                    "100",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "disabled": false,
-          "folded": true,
-          "name": "Tuesday",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "tuesday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "tuesday",
-                    "Tween",
-                    "\"tuesday hover scale 1.05\"",
-                    "1.025",
-                    "1.025",
-                    "\"easeInQuad\"",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
+              "folded": true,
+              "name": "Tuesday",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "disabled": false,
@@ -5481,11 +5669,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "MouseButtonPressed"
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "tuesday",
                         "",
-                        "Left"
+                        "",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -5499,9 +5689,9 @@
                       "parameters": [
                         "tuesday",
                         "Tween",
-                        "\"tuesday hover click scale\"",
-                        "0.975",
-                        "0.975",
+                        "\"tuesday hover scale 1.05\"",
+                        "1.025",
+                        "1.025",
                         "\"easeInQuad\"",
                         "50",
                         ""
@@ -5509,7 +5699,91 @@
                       "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "tuesday",
+                            "Tween",
+                            "\"tuesday hover click scale\"",
+                            "0.975",
+                            "0.975",
+                            "\"easeInQuad\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarGlobal"
+                          },
+                          "parameters": [
+                            "chosenLevel",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "\"Briefing\"",
+                            "yes"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 },
                 {
                   "disabled": false,
@@ -5518,121 +5792,60 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "MouseButtonReleased"
+                        "inverted": true,
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "tuesday",
                         "",
-                        "Left"
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": [],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectScaleTween"
+                      },
+                      "parameters": [
+                        "tuesday",
+                        "Tween",
+                        "\"tuesday non hover scale 1\"",
+                        "1",
+                        "1",
+                        "\"easeInQuad\"",
+                        "100",
+                        ""
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "actions": [],
                   "events": []
                 }
-              ]
+              ],
+              "parameters": []
             },
             {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
               "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "tuesday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "tuesday",
-                    "Tween",
-                    "\"tuesday non hover scale 1\"",
-                    "1",
-                    "1",
-                    "\"easeInQuad\"",
-                    "100",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "disabled": false,
-          "folded": true,
-          "name": "Wednesday",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "wednesday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "wednesday",
-                    "Tween",
-                    "\"wednesday hover scale 1.05\"",
-                    "1.025",
-                    "1.025",
-                    "\"easeInQuad\"",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
+              "folded": true,
+              "name": "Wednesday",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "disabled": false,
@@ -5642,11 +5855,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "MouseButtonPressed"
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "wednesday",
                         "",
-                        "Left"
+                        "",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -5660,9 +5875,9 @@
                       "parameters": [
                         "wednesday",
                         "Tween",
-                        "\"wednesday hover click scale\"",
-                        "0.975",
-                        "0.975",
+                        "\"wednesday hover scale 1.05\"",
+                        "1.025",
+                        "1.025",
                         "\"easeInQuad\"",
                         "50",
                         ""
@@ -5670,7 +5885,91 @@
                       "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "wednesday",
+                            "Tween",
+                            "\"wednesday hover click scale\"",
+                            "0.975",
+                            "0.975",
+                            "\"easeInQuad\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarGlobal"
+                          },
+                          "parameters": [
+                            "chosenLevel",
+                            "=",
+                            "2"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "\"Briefing\"",
+                            "yes"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 },
                 {
                   "disabled": false,
@@ -5679,121 +5978,60 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "MouseButtonReleased"
+                        "inverted": true,
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "wednesday",
                         "",
-                        "Left"
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": [],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectScaleTween"
+                      },
+                      "parameters": [
+                        "wednesday",
+                        "Tween",
+                        "\"wednesday non hover scale 1\"",
+                        "1",
+                        "1",
+                        "\"easeInQuad\"",
+                        "100",
+                        ""
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "actions": [],
                   "events": []
                 }
-              ]
+              ],
+              "parameters": []
             },
             {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
               "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "wednesday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "wednesday",
-                    "Tween",
-                    "\"wednesday non hover scale 1\"",
-                    "1",
-                    "1",
-                    "\"easeInQuad\"",
-                    "100",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "disabled": false,
-          "folded": true,
-          "name": "Thursday",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "thursday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "thursday",
-                    "Tween",
-                    "\"thursday hover scale 1.05\"",
-                    "1.025",
-                    "1.025",
-                    "\"easeInQuad\"",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
+              "folded": true,
+              "name": "Thursday",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "disabled": false,
@@ -5803,11 +6041,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "MouseButtonPressed"
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "thursday",
                         "",
-                        "Left"
+                        "",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -5821,9 +6061,9 @@
                       "parameters": [
                         "thursday",
                         "Tween",
-                        "\"thursday hover click scale\"",
-                        "0.975",
-                        "0.975",
+                        "\"thursday hover scale 1.05\"",
+                        "1.025",
+                        "1.025",
                         "\"easeInQuad\"",
                         "50",
                         ""
@@ -5831,7 +6071,91 @@
                       "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "thursday",
+                            "Tween",
+                            "\"thursday hover click scale\"",
+                            "0.975",
+                            "0.975",
+                            "\"easeInQuad\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarGlobal"
+                          },
+                          "parameters": [
+                            "chosenLevel",
+                            "=",
+                            "3"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "\"Briefing\"",
+                            "yes"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 },
                 {
                   "disabled": false,
@@ -5840,121 +6164,60 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "MouseButtonReleased"
+                        "inverted": true,
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "thursday",
                         "",
-                        "Left"
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": [],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectScaleTween"
+                      },
+                      "parameters": [
+                        "thursday",
+                        "Tween",
+                        "\"thursday non hover scale 1\"",
+                        "1",
+                        "1",
+                        "\"easeInQuad\"",
+                        "100",
+                        ""
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "actions": [],
                   "events": []
                 }
-              ]
+              ],
+              "parameters": []
             },
             {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
               "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "thursday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "thursday",
-                    "Tween",
-                    "\"thursday non hover scale 1\"",
-                    "1",
-                    "1",
-                    "\"easeInQuad\"",
-                    "100",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "disabled": false,
-          "folded": true,
-          "name": "Friday",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "friday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "friday",
-                    "Tween",
-                    "\"friday hover scale 1.05\"",
-                    "1.025",
-                    "1.025",
-                    "\"easeInQuad\"",
-                    "50",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
+              "folded": true,
+              "name": "Friday",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "disabled": false,
@@ -5964,11 +6227,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "MouseButtonPressed"
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "friday",
                         "",
-                        "Left"
+                        "",
+                        ""
                       ],
                       "subInstructions": []
                     }
@@ -5982,9 +6247,9 @@
                       "parameters": [
                         "friday",
                         "Tween",
-                        "\"friday hover click scale\"",
-                        "0.975",
-                        "0.975",
+                        "\"friday hover scale 1.05\"",
+                        "1.025",
+                        "1.025",
                         "\"easeInQuad\"",
                         "50",
                         ""
@@ -5992,7 +6257,91 @@
                       "subInstructions": []
                     }
                   ],
-                  "events": []
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "friday",
+                            "Tween",
+                            "\"friday hover click scale\"",
+                            "0.975",
+                            "0.975",
+                            "\"easeInQuad\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarGlobal"
+                          },
+                          "parameters": [
+                            "chosenLevel",
+                            "=",
+                            "4"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "selectedtab",
+                            "\"Briefing\"",
+                            "yes"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
                 },
                 {
                   "disabled": false,
@@ -6001,71 +6350,67 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": false,
-                        "value": "MouseButtonReleased"
+                        "inverted": true,
+                        "value": "SourisSurObjet"
                       },
                       "parameters": [
+                        "friday",
                         "",
-                        "Left"
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": [],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Tween::AddObjectScaleTween"
+                      },
+                      "parameters": [
+                        "friday",
+                        "Tween",
+                        "\"friday non hover scale 1\"",
+                        "1",
+                        "1",
+                        "\"easeInQuad\"",
+                        "100",
+                        ""
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "actions": [],
                   "events": []
                 }
-              ]
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "friday",
-                    "",
-                    "",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "Tween::AddObjectScaleTween"
-                  },
-                  "parameters": [
-                    "friday",
-                    "Tween",
-                    "\"friday non hover scale 1\"",
-                    "1",
-                    "1",
-                    "\"easeInQuad\"",
-                    "100",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
+              "parameters": []
             }
           ],
           "parameters": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Each tab's variable actions is set here, consisting of tweens, creation and deletion of objects, etc.",
+          "comment2": ""
         },
         {
           "colorB": 228,
@@ -6073,7 +6418,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "name": "Selected tab",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -9365,6 +9710,15 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "OptionsEvents"
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -9712,15 +10066,6 @@
             }
           ],
           "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Link",
-          "include": {
-            "includeConfig": 0
-          },
-          "target": "OptionsEvents"
         }
       ],
       "layers": [
@@ -9805,7 +10150,7 @@
         "gridWidth": 48,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.49999999999999956
+        "zoomFactor": 0.5799999999999996
       },
       "objectsGroups": [
         {
@@ -9887,222 +10232,6 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "height": 768,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "b88aafed-fd8f-4731-92bf-c61b3792cd2a",
-          "width": 96,
-          "x": 48,
-          "y": 144,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "Player",
-          "persistentUuid": "34310cd7-c2e1-48f4-a17e-3960d36e9557",
-          "width": 0,
-          "x": 720,
-          "y": 480,
-          "zOrder": 1,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "PathNPC",
-          "persistentUuid": "9b348f9b-9b1e-4d64-bcec-3735b7af22cc",
-          "width": 0,
-          "x": 912,
-          "y": 768,
-          "zOrder": 5,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "StandingNPC",
-          "persistentUuid": "08300b3a-b982-4483-891c-a9893c30da3b",
-          "width": 0,
-          "x": 1008,
-          "y": 288,
-          "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "PathNPCDestination",
-          "persistentUuid": "06331f3a-93cc-40e5-8d09-63a45a3827c3",
-          "width": 48,
-          "x": 912,
-          "y": 240,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ID",
-              "type": "string",
-              "value": "4"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "PathNPCDestination",
-          "persistentUuid": "a2b1c075-f24b-45fc-990d-b8647fd6c98e",
-          "width": 48,
-          "x": 912,
-          "y": 768,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ID",
-              "type": "string",
-              "value": "1"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "PathNPCDestination",
-          "persistentUuid": "8e0a9352-02de-45b9-870d-5a3f2dc45554",
-          "width": 48,
-          "x": 288,
-          "y": 768,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ID",
-              "type": "string",
-              "value": "2"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 768,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "f9042659-8cb5-4c1d-bc55-61e77b2dbe41",
-          "width": 96,
-          "x": 1776,
-          "y": 144,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 96,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "f467a72b-051a-47ef-8a41-6b527961678b",
-          "width": 1632,
-          "x": 144,
-          "y": 912,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "PathNPCDestination",
-          "persistentUuid": "69c80fb3-2c48-4343-b78c-b3676e1adf7f",
-          "width": 48,
-          "x": 288,
-          "y": 240,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": [
-            {
-              "name": "ID",
-              "type": "string",
-              "value": "3"
-            }
-          ]
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "standing_increase_anxiety",
-          "persistentUuid": "60fae389-c645-4b49-8f88-f9ccdf18ac0d",
-          "width": 0,
-          "x": 1008,
-          "y": 288,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "FastPathNPC",
-          "persistentUuid": "68b67213-79bd-494b-9a0b-2542c868657e",
-          "width": 0,
-          "x": 912,
-          "y": 192,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "layer": "GUI",
@@ -10113,214 +10242,6 @@
           "x": 48,
           "y": 1010,
           "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "ZOrderUp",
-          "persistentUuid": "caf4690e-160f-49bb-8718-56e264389374",
-          "width": 0,
-          "x": 1392,
-          "y": 624,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "layer": "",
-          "locked": false,
-          "name": "ZOrderDown",
-          "persistentUuid": "3a0bb56e-5087-4f65-bc91-896a033e3a53",
-          "width": 0,
-          "x": 1344,
-          "y": 624,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 384,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "cd69926d-06a6-4a6a-bf6e-3466bc9bfb48",
-          "width": 192,
-          "x": 432,
-          "y": 336,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 384,
-          "layer": "",
-          "locked": false,
-          "name": "second_floor",
-          "persistentUuid": "4ebeaf93-6bd9-4e74-8c34-ef2e420b200e",
-          "width": 240,
-          "x": 1440,
-          "y": 432,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 144,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "2c7eb2f5-3a07-49a1-966b-761b4b24d2d5",
-          "width": 192,
-          "x": 1536,
-          "y": 192,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 144,
-          "layer": "",
-          "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "c98e12d4-5328-4f68-a15b-214c553cfd23",
-          "width": 48,
-          "x": 1440,
-          "y": 576,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 144,
-          "layer": "",
-          "locked": false,
-          "name": "clip_2nd_floor",
-          "persistentUuid": "99150980-0ac1-496a-aaea-39fb0e3a7e33",
-          "width": 48,
-          "x": 1392,
-          "y": 432,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "clip_2nd_floor",
-          "persistentUuid": "14795e4b-ae04-421d-8aa0-49b537dea10e",
-          "width": 240,
-          "x": 1440,
-          "y": 384,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 384,
-          "layer": "",
-          "locked": false,
-          "name": "clip_2nd_floor",
-          "persistentUuid": "b962c440-3403-48dd-99cf-d8e7eff0f3aa",
-          "width": 48,
-          "x": 1680,
-          "y": 432,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "clip_2nd_floor",
-          "persistentUuid": "da4ba64b-2a57-4e82-943c-3ff7eb41855a",
-          "width": 240,
-          "x": 1440,
-          "y": 816,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 96,
-          "layer": "",
-          "locked": false,
-          "name": "clip_2nd_floor",
-          "persistentUuid": "add4475d-dcf7-4a09-989f-2c512df8937f",
-          "width": 48,
-          "x": 1392,
-          "y": 720,
-          "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "clip_both",
-          "persistentUuid": "142077d6-cfcf-44ff-b789-5acf67c7fd2a",
-          "width": 96,
-          "x": 1344,
-          "y": 672,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 48,
-          "layer": "",
-          "locked": false,
-          "name": "clip_both",
-          "persistentUuid": "f5f2a844-0e92-4b46-bdb1-318276780594",
-          "width": 96,
-          "x": 1344,
-          "y": 576,
-          "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -10343,96 +10264,16 @@
         },
         {
           "angle": 0,
-          "customSize": true,
-          "height": 96,
+          "customSize": false,
+          "height": 0,
           "layer": "",
           "locked": false,
-          "name": "clip_1st_floor",
-          "persistentUuid": "5507794c-5f74-44d8-b051-44a82a1a46a4",
-          "width": 1632,
-          "x": 144,
-          "y": 48,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 96,
-          "layer": "",
-          "locked": false,
-          "name": "trigger_both",
-          "persistentUuid": "c7a45ed2-4d67-44c0-a095-0d1075d83758",
-          "width": 144,
-          "x": 624,
-          "y": 624,
-          "zOrder": 17,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 144,
-          "layer": "",
-          "locked": false,
-          "name": "trigger_1st_floor",
-          "persistentUuid": "c46216a4-c9a9-46b4-bcb9-2504897ec10b",
-          "width": 144,
-          "x": 1344,
-          "y": 432,
-          "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 144,
-          "layer": "",
-          "locked": false,
-          "name": "trigger_2nd_floor",
-          "persistentUuid": "08671470-30e3-4790-b28b-eac4ca66026b",
-          "width": 96,
-          "x": 1584,
-          "y": 672,
-          "zOrder": 19,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 96,
-          "layer": "",
-          "locked": false,
-          "name": "button",
-          "persistentUuid": "394c109a-3ffa-407f-9769-adebfa165446",
-          "width": 48,
-          "x": 1248,
-          "y": 240,
-          "zOrder": 20,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 384,
-          "layer": "",
-          "locked": false,
-          "name": "second_floor_example",
-          "persistentUuid": "c2a86706-4953-467f-ac3e-94763ed895fc",
-          "width": 240,
-          "x": 1440,
-          "y": 432,
-          "zOrder": 10,
+          "name": "cursor",
+          "persistentUuid": "d4486c6f-d96d-44be-9d67-95479f76c5ed",
+          "width": 0,
+          "x": -48,
+          "y": 528,
+          "zOrder": 21,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -10441,14 +10282,14 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "",
+          "layer": "GUI",
           "locked": false,
-          "name": "cursor",
-          "persistentUuid": "87859742-6a41-44bd-a4c2-c93ca942c823",
+          "name": "levelTime",
+          "persistentUuid": "0121e8ef-7b76-4e43-9864-7a8271475abb",
           "width": 0,
-          "x": 1152,
-          "y": 768,
-          "zOrder": 21,
+          "x": 0,
+          "y": 336,
+          "zOrder": 22,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -11632,9 +11473,9 @@
           "variables": [],
           "behaviors": [
             {
-              "leftEdgeAnchor": 2,
               "name": "Anchor",
               "type": "AnchorBehavior::AnchorBehavior",
+              "leftEdgeAnchor": 2,
               "bottomEdgeAnchor": 0,
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
@@ -11875,9 +11716,9 @@
           "variables": [],
           "behaviors": [
             {
-              "leftEdgeAnchor": 2,
               "name": "Anchor",
               "type": "AnchorBehavior::AnchorBehavior",
+              "leftEdgeAnchor": 2,
               "topEdgeAnchor": 2,
               "bottomEdgeAnchor": 0,
               "relativeToOriginalWindowSize": true,
@@ -12150,6 +11991,23 @@
               ]
             }
           ]
+        },
+        {
+          "name": "levelTime",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "time",
+            "opacity": 255,
+            "fontSize": 40,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "fonts\\Atkinson-Hyperlegible-Bold-102.ttf",
+            "align": "left",
+            "wordWrap": true
+          }
         }
       ],
       "events": [
@@ -12285,6 +12143,52 @@
             }
           ],
           "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Includes the events from the certain days only when the chosenLevel variable is a certain value. Since the creation of the external layout is in the external event, the layouts will ever overlap each other.",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "chosenLevel",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "MondayEvents"
+            }
+          ]
         }
       ],
       "layers": [
@@ -12422,6 +12326,30 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "name": "Pause Menu",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "ZoomBlur",
+              "name": "Blur",
+              "doubleParameters": {
+                "centerX": 0.5,
+                "centerY": 0.5,
+                "innerRadius": 100,
+                "strength": 1
+              },
+              "stringParameters": {},
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 6022704,
+          "ambientLightColorR": -2147483632,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Exit to menu",
           "visibility": true,
           "cameras": [],
           "effects": []
@@ -14405,6 +14333,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "cursor",
+          "persistentUuid": "475d9e57-5533-4fd8-b8cf-65752934e6d4",
+          "width": 0,
+          "x": 1817,
+          "y": 323,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -14444,6 +14388,59 @@
         }
       ],
       "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CacheSouris"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "cursor",
+                "=",
+                "MouseX()",
+                "=",
+                "MouseY()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
         {
           "disabled": false,
           "folded": false,
@@ -18144,6 +18141,18 @@
             {
               "type": {
                 "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "enablePauseTabs",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "Tween::AddObjectPositionXTween"
               },
               "parameters": [
@@ -18303,6 +18312,30 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"Exit to menu\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "EnableLayerEffect"
+              },
+              "parameters": [
+                "",
+                "\"Pause Menu\"",
+                "\"Blur\"",
+                "no"
+              ],
+              "subInstructions": []
             }
           ],
           "events": [
@@ -18372,6 +18405,18 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "enablePauseTabs",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
             {
               "type": {
                 "inverted": false,
@@ -18555,6 +18600,19 @@
                 "\"linear\"",
                 "100",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "EnableLayerEffect"
+              },
+              "parameters": [
+                "",
+                "\"Pause Menu\"",
+                "\"Blur\"",
+                "no"
               ],
               "subInstructions": []
             }
@@ -18817,6 +18875,30 @@
                 ""
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ShowLayer"
+              },
+              "parameters": [
+                "",
+                "\"Exit to menu\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "EnableLayerEffect"
+              },
+              "parameters": [
+                "",
+                "\"Pause Menu\"",
+                "\"Blur\"",
+                "yes"
+              ],
+              "subInstructions": []
             }
           ],
           "events": [
@@ -18929,6 +19011,28 @@
                     "cancel_hover",
                     "=",
                     "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ChangeLayer"
+                  },
+                  "parameters": [
+                    "exit_hover",
+                    "\"Exit to menu\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ChangeLayer"
+                  },
+                  "parameters": [
+                    "cancel_hover",
+                    "\"Exit to menu\""
                   ],
                   "subInstructions": []
                 }
@@ -20044,6 +20148,18 @@
                 "\"linear\"",
                 "100",
                 ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "pauseTab",
+                "=",
+                "GlobalVariable(lastSelectedPauseTab)"
               ],
               "subInstructions": []
             }
@@ -22598,6 +22714,160 @@
                 "isFullscreened",
                 "=",
                 "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Main",
+      "lastChangeTimeStamp": 0,
+      "name": "MondayEvents",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Creates the external layout.",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"Monday\"",
+                "0",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"mondayTimer\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "isPaused",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Timer"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"mondayTimer\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "levelTimes.mondayTime",
+                    "+",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"mondayTimer\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "levelTime",
+                "=",
+                "\"Time: \" + GlobalVariableString(levelTimes.mondayTime)"
               ],
               "subInstructions": []
             }
@@ -33850,7 +34120,7 @@
         "gridWidth": 32,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.5099999999999998
+        "zoomFactor": 0.32999999999999974
       }
     },
     {
@@ -34213,7 +34483,7 @@
           "angle": 0,
           "customSize": false,
           "height": 0,
-          "layer": "Pause Menu",
+          "layer": "Exit to menu",
           "locked": false,
           "name": "mainmenuBox",
           "persistentUuid": "18942608-f3f3-4d1a-9c8d-44ca20cb73e2",
@@ -34239,6 +34509,546 @@
         "snap": true,
         "windowMask": false,
         "zoomFactor": 0.5599999999999996
+      }
+    },
+    {
+      "associatedLayout": "Main",
+      "name": "Monday",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 768,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "a666c9da-15f5-4703-b96c-7eec340b5e54",
+          "width": 96,
+          "x": 48,
+          "y": 144,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Player",
+          "persistentUuid": "6ee9fc9e-29c1-4e3c-8810-7761967d35ec",
+          "width": 0,
+          "x": 720,
+          "y": 480,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPC",
+          "persistentUuid": "9fe0b60c-d871-4a5e-828f-9d1b0b3ce3bd",
+          "width": 0,
+          "x": 912,
+          "y": 768,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "StandingNPC",
+          "persistentUuid": "12f9fff7-e6ae-49cd-b760-49e6c101597a",
+          "width": 0,
+          "x": 1008,
+          "y": 288,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPCDestination",
+          "persistentUuid": "b9e39963-4dcb-42cb-9b19-e9faa3c7fe88",
+          "width": 48,
+          "x": 912,
+          "y": 240,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPCDestination",
+          "persistentUuid": "49f26759-6905-48b4-9479-222767d574af",
+          "width": 48,
+          "x": 912,
+          "y": 768,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPCDestination",
+          "persistentUuid": "2026896f-9f25-4666-9973-7ba0359737e1",
+          "width": 48,
+          "x": 288,
+          "y": 768,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 768,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "b7a77adc-6522-459b-8155-0bbcc81fcc46",
+          "width": 96,
+          "x": 1776,
+          "y": 144,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "bccf2506-3c83-4bd9-a4df-4998b2a15579",
+          "width": 1632,
+          "x": 144,
+          "y": 912,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPCDestination",
+          "persistentUuid": "55e816df-bb6a-440d-b21b-b1638069b26d",
+          "width": 48,
+          "x": 288,
+          "y": 240,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "standing_increase_anxiety",
+          "persistentUuid": "44682c49-2661-4ac7-a90f-4f478e4f14ee",
+          "width": 0,
+          "x": 1008,
+          "y": 288,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "FastPathNPC",
+          "persistentUuid": "8c1c751c-3ff1-4f2e-9076-777d7d7ce9ae",
+          "width": 0,
+          "x": 912,
+          "y": 192,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "ZOrderUp",
+          "persistentUuid": "6c790f55-9680-4e16-aaae-7400f9dcaa90",
+          "width": 0,
+          "x": 1392,
+          "y": 624,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "ZOrderDown",
+          "persistentUuid": "6f3c1285-a91b-40d6-af1b-dd2bd68223bf",
+          "width": 0,
+          "x": 1344,
+          "y": 624,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "c555b7b9-7123-4990-98ed-eb80deb0e1a6",
+          "width": 192,
+          "x": 432,
+          "y": 336,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "second_floor",
+          "persistentUuid": "744ceda8-885c-46e2-a36a-92b0d3a9dce9",
+          "width": 240,
+          "x": 1440,
+          "y": 432,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "c61189c3-6a61-484b-b286-94dfd093a9ef",
+          "width": 192,
+          "x": 1536,
+          "y": 192,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "97464dd3-a373-4558-93c5-8a312a4a905e",
+          "width": 48,
+          "x": 1440,
+          "y": 576,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "c4dfd4d9-2fa4-4892-898c-59051b51bd4f",
+          "width": 48,
+          "x": 1392,
+          "y": 432,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "563b7890-33d9-47b4-a883-17d0d2c1fbfe",
+          "width": 240,
+          "x": 1440,
+          "y": 384,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "36d022ab-5a32-47cf-a73f-e5fcd112682c",
+          "width": 48,
+          "x": 1680,
+          "y": 432,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "42d1bdf9-958a-4b18-a5e2-9bb8a230b757",
+          "width": 240,
+          "x": 1440,
+          "y": 816,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "clip_2nd_floor",
+          "persistentUuid": "c01b127b-13ac-4ce7-be2c-19f13b3153e8",
+          "width": 48,
+          "x": 1392,
+          "y": 720,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_both",
+          "persistentUuid": "a99d0837-b044-4953-80bd-c53c2aeaebd9",
+          "width": 96,
+          "x": 1344,
+          "y": 672,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 48,
+          "layer": "",
+          "locked": false,
+          "name": "clip_both",
+          "persistentUuid": "4814fa33-60e4-4122-8c09-bfffb68efac7",
+          "width": 96,
+          "x": 1344,
+          "y": 576,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "clip_1st_floor",
+          "persistentUuid": "a6e5ed9e-9408-4682-84bd-03f14d67d3c0",
+          "width": 1632,
+          "x": 144,
+          "y": 48,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "trigger_both",
+          "persistentUuid": "ff983e06-8a5d-4325-ab65-166f345314b8",
+          "width": 144,
+          "x": 624,
+          "y": 624,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "trigger_1st_floor",
+          "persistentUuid": "4a0778ce-c61f-4979-b702-33767d07b290",
+          "width": 144,
+          "x": 1152,
+          "y": 432,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 144,
+          "layer": "",
+          "locked": false,
+          "name": "trigger_2nd_floor",
+          "persistentUuid": "64886f8c-a61e-40be-97fb-81afa360c42f",
+          "width": 144,
+          "x": 1152,
+          "y": 624,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "",
+          "locked": false,
+          "name": "button",
+          "persistentUuid": "0f7a899b-dfe7-4ac3-98f1-a9f90d7716b1",
+          "width": 48,
+          "x": 1248,
+          "y": 240,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 384,
+          "layer": "",
+          "locked": false,
+          "name": "second_floor_example",
+          "persistentUuid": "91e8303c-d910-4cae-95f5-c70ffe1678f5",
+          "width": 240,
+          "x": 1440,
+          "y": 432,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": true,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 48,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridType": "rectangular",
+        "gridWidth": 48,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.5799999999999996
       }
     }
   ],
