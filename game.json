@@ -1024,6 +1024,15 @@
         "name": "sprites\\UI\\MainMenu\\weekday_selection.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "loadingBar-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "loadingBar-1.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -1409,7 +1418,7 @@
       ]
     },
     {
-      "name": "difficulty_dropdown_selected",
+      "name": "easy_dropdown_selected",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -1435,7 +1444,95 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
+                    "x": 15,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
                     "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "medium_dropdown_selected",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "sprites\\UI\\Options\\difficulty_option_hover.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 15,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hard_dropdown_selected",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "sprites\\UI\\Options\\difficulty_option_hover.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 15,
                     "y": 0
                   },
                   "centerPoint": {
@@ -1891,6 +1988,21 @@
       },
       "absoluteCoordinates": false,
       "clearBetweenFrames": true
+    },
+    {
+      "height": 32,
+      "name": "fade",
+      "tags": "",
+      "texture": "fade-1.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
     }
   ],
   "objectsGroups": [
@@ -2287,21 +2399,6 @@
               ]
             }
           ]
-        },
-        {
-          "height": 32,
-          "name": "fade",
-          "tags": "",
-          "texture": "fade-1.png",
-          "type": "TiledSpriteObject::TiledSprite",
-          "width": 32,
-          "variables": [],
-          "behaviors": [
-            {
-              "name": "Tween",
-              "type": "Tween::TweenBehavior"
-            }
-          ]
         }
       ],
       "events": [
@@ -2436,6 +2533,18 @@
                 "fade",
                 "=",
                 "SceneWindowHeight()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "isFullscreened",
+                "=",
+                "1"
               ],
               "subInstructions": []
             }
@@ -2744,7 +2853,7 @@
         "gridWidth": 32,
         "snap": false,
         "windowMask": false,
-        "zoomFactor": 0.41999999999999926
+        "zoomFactor": 0.19999999999999915
       },
       "objectsGroups": [
         {
@@ -3164,6 +3273,22 @@
           "x": 643,
           "y": 180,
           "zOrder": 23,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 64,
+          "layer": "Fade",
+          "locked": false,
+          "name": "loadingBar",
+          "persistentUuid": "5fbaf046-0488-4ef3-8aa1-5e0f704d5360",
+          "width": 1291,
+          "x": 931,
+          "y": 1000,
+          "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -5287,6 +5412,50 @@
               ]
             }
           ]
+        },
+        {
+          "name": "loadingBar",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "loadingBar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "loadingBar-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 32,
+                        "y": 32
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -5490,6 +5659,43 @@
                 "isPaused",
                 "=",
                 "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fade",
+                "0",
+                "0",
+                "\"Fade\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "fade",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"loadingTimer\""
               ],
               "subInstructions": []
             }
@@ -6024,6 +6230,108 @@
                 "scoreMondayShadow.X() - 105",
                 "=",
                 "scoreMondayShadow.Y() - 230"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TiledSpriteObject::Width"
+              },
+              "parameters": [
+                "fade",
+                "=",
+                "SceneWindowWidth()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "TiledSpriteObject::Height"
+              },
+              "parameters": [
+                "fade",
+                "=",
+                "SceneWindowHeight()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreX"
+              },
+              "parameters": [
+                "loadingBar",
+                "=",
+                "SceneWindowWidth() /2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "loadingBar",
+                "=",
+                "campaign_container.X()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Timer"
+              },
+              "parameters": [
+                "",
+                "1",
+                "\"loadingTimer\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "fade",
+                "Tween",
+                "\"fade opacity 0\"",
+                "0",
+                "\"linear\"",
+                "200",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Tween::AddObjectPositionYTween"
+              },
+              "parameters": [
+                "loadingBar",
+                "Tween",
+                "\"loading bar move down\"",
+                "2000",
+                "\"linear\"",
+                "100",
+                ""
               ],
               "subInstructions": []
             }
@@ -6783,7 +7091,7 @@
                         "\"monday outline hover opacity 255\"",
                         "255",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -6932,7 +7240,7 @@
                         "1.05",
                         "1.05",
                         "\"easeInQuad\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -6948,7 +7256,7 @@
                         "\"monday outline hover opacity 0\"",
                         "0",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7035,7 +7343,7 @@
                         "\"tuesday outline hover opacity 255\"",
                         "255",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7200,7 +7508,7 @@
                         "\"tuesday outline hover opacity 0\"",
                         "0",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7287,7 +7595,7 @@
                         "\"wednesday outline hover opacity 255\"",
                         "255",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7452,7 +7760,7 @@
                         "\"wednesday outline hover opacity 0\"",
                         "0",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7539,7 +7847,7 @@
                         "\"thursday outline hover opacity 255\"",
                         "255",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7687,7 +7995,7 @@
                         "\"thursday outline hover opacity 0\"",
                         "0",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7774,7 +8082,7 @@
                         "\"friday outline hover opacity 255\"",
                         "255",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7956,7 +8264,7 @@
                         "\"friday outline hover opacity 0\"",
                         "0",
                         "\"linear\"",
-                        "100",
+                        "50",
                         ""
                       ],
                       "subInstructions": []
@@ -7991,7 +8299,7 @@
           "colorR": 74,
           "creationTime": 0,
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "name": "Selected tab",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11679,6 +11987,493 @@
                   "conditions": [
                     {
                       "type": {
+                        "inverted": true,
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "exit_box",
+                        "",
+                        "",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Tab Text\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedTab",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Tab Text\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedTab",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "4"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Tab Text\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedTab",
+                            "=",
+                            "4"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "MouseButtonPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "VarScene"
+                          },
+                          "parameters": [
+                            "lastTabSelected",
+                            "=",
+                            "2"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectScaleTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover scale 0.9\"",
+                            "0.9",
+                            "0.9",
+                            "\"linear\"",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "exit_box",
+                            "Tween",
+                            "\"exit box hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "EnableLayerEffect"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Tab Text\"",
+                            "\"Blur\"",
+                            "no"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "interactable",
+                            "=",
+                            "1"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "selectedTab",
+                            "=",
+                            "2"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "inverted": false,
                         "value": "SourisSurObjet"
                       },
@@ -11863,6 +12658,17 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "name": "Cursor",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 11567328,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "name": "Fade",
           "visibility": true,
           "cameras": [],
           "effects": []
@@ -26499,7 +27305,7 @@
                     "value": "Delete"
                   },
                   "parameters": [
-                    "difficulty_dropdown_selected",
+                    "easy_dropdown_selected",
                     ""
                   ],
                   "subInstructions": []
@@ -27014,7 +27820,7 @@
                     "value": "Delete"
                   },
                   "parameters": [
-                    "difficulty_dropdown_selected",
+                    "easy_dropdown_selected",
                     ""
                   ],
                   "subInstructions": []
@@ -27086,7 +27892,7 @@
                   "colorR": 74,
                   "creationTime": 0,
                   "disabled": false,
-                  "folded": true,
+                  "folded": false,
                   "name": "Difficulty Dropdown",
                   "source": "",
                   "type": "BuiltinCommonInstructions::Group",
@@ -27288,7 +28094,29 @@
                             "value": "Delete"
                           },
                           "parameters": [
-                            "difficulty_dropdown_selected",
+                            "easy_dropdown_selected",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "medium_dropdown_selected",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "hard_dropdown_selected",
                             ""
                           ],
                           "subInstructions": []
@@ -27395,9 +28223,37 @@
                           },
                           "parameters": [
                             "",
-                            "difficulty_dropdown_selected",
+                            "easy_dropdown_selected",
                             "difficulty_dropdown_easy.X() + 365",
                             "difficulty_dropdown_easy.Y()",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "medium_dropdown_selected",
+                            "difficulty_dropdown_medium.X() + 365",
+                            "difficulty_dropdown_medium.Y()",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "hard_dropdown_selected",
+                            "difficulty_dropdown_hard.X() + 365",
+                            "difficulty_dropdown_hard.Y()",
                             ""
                           ],
                           "subInstructions": []
@@ -27441,7 +28297,29 @@
                             "value": "ChangeLayer"
                           },
                           "parameters": [
-                            "difficulty_dropdown_selected",
+                            "easy_dropdown_selected",
+                            "\"Options\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ChangeLayer"
+                          },
+                          "parameters": [
+                            "medium_dropdown_selected",
+                            "\"Options\""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ChangeLayer"
+                          },
+                          "parameters": [
+                            "hard_dropdown_selected",
                             "\"Options\""
                           ],
                           "subInstructions": []
@@ -27488,9 +28366,69 @@
                             "value": "ChangePlan"
                           },
                           "parameters": [
-                            "difficulty_dropdown_selected",
+                            "easy_dropdown_selected",
                             "=",
                             "91"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "medium_dropdown_selected",
+                            "=",
+                            "91"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "hard_dropdown_selected",
+                            "=",
+                            "91"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Opacity"
+                          },
+                          "parameters": [
+                            "easy_dropdown_selected",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Opacity"
+                          },
+                          "parameters": [
+                            "medium_dropdown_selected",
+                            "=",
+                            "0"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Opacity"
+                          },
+                          "parameters": [
+                            "hard_dropdown_selected",
+                            "=",
+                            "0"
                           ],
                           "subInstructions": []
                         }
@@ -27520,13 +28458,13 @@
                         {
                           "type": {
                             "inverted": false,
-                            "value": "Tween::AddObjectPositionYTween"
+                            "value": "Tween::AddObjectOpacityTween"
                           },
                           "parameters": [
-                            "difficulty_dropdown_selected",
+                            "easy_dropdown_selected",
                             "Tween",
-                            "\"easy hover selected\"",
-                            "difficulty_dropdown_easy.Y()",
+                            "\"easy difficulty hover opacity 255\"",
+                            "255",
                             "\"linear\"",
                             "50",
                             ""
@@ -27615,7 +28553,29 @@
                                 "value": "Delete"
                               },
                               "parameters": [
-                                "difficulty_dropdown_selected",
+                                "easy_dropdown_selected",
+                                ""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "medium_dropdown_selected",
+                                ""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "hard_dropdown_selected",
                                 ""
                               ],
                               "subInstructions": []
@@ -27624,6 +28584,45 @@
                           "events": []
                         }
                       ]
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "SourisSurObjet"
+                          },
+                          "parameters": [
+                            "difficulty_dropdown_easy",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "easy_dropdown_selected",
+                            "Tween",
+                            "\"easy difficulty hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
                     },
                     {
                       "disabled": false,
@@ -27648,13 +28647,13 @@
                         {
                           "type": {
                             "inverted": false,
-                            "value": "Tween::AddObjectPositionYTween"
+                            "value": "Tween::AddObjectOpacityTween"
                           },
                           "parameters": [
-                            "difficulty_dropdown_selected",
+                            "medium_dropdown_selected",
                             "Tween",
-                            "\"medium hover selected\"",
-                            "difficulty_dropdown_medium.Y()",
+                            "\"medium difficulty hover opacity 255\"",
+                            "255",
                             "\"linear\"",
                             "50",
                             ""
@@ -27743,7 +28742,29 @@
                                 "value": "Delete"
                               },
                               "parameters": [
-                                "difficulty_dropdown_selected",
+                                "easy_dropdown_selected",
+                                ""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "medium_dropdown_selected",
+                                ""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "hard_dropdown_selected",
                                 ""
                               ],
                               "subInstructions": []
@@ -27752,6 +28773,45 @@
                           "events": []
                         }
                       ]
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "SourisSurObjet"
+                          },
+                          "parameters": [
+                            "difficulty_dropdown_medium",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "medium_dropdown_selected",
+                            "Tween",
+                            "\"medium difficulty hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
                     },
                     {
                       "disabled": false,
@@ -27776,13 +28836,13 @@
                         {
                           "type": {
                             "inverted": false,
-                            "value": "Tween::AddObjectPositionYTween"
+                            "value": "Tween::AddObjectOpacityTween"
                           },
                           "parameters": [
-                            "difficulty_dropdown_selected",
+                            "hard_dropdown_selected",
                             "Tween",
-                            "\"hard hover selected\"",
-                            "difficulty_dropdown_hard.Y()",
+                            "\"hard difficulty hover opacity 255\"",
+                            "255",
                             "\"linear\"",
                             "50",
                             ""
@@ -27871,7 +28931,29 @@
                                 "value": "Delete"
                               },
                               "parameters": [
-                                "difficulty_dropdown_selected",
+                                "easy_dropdown_selected",
+                                ""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "medium_dropdown_selected",
+                                ""
+                              ],
+                              "subInstructions": []
+                            },
+                            {
+                              "type": {
+                                "inverted": false,
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "hard_dropdown_selected",
                                 ""
                               ],
                               "subInstructions": []
@@ -27880,6 +28962,45 @@
                           "events": []
                         }
                       ]
+                    },
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "SourisSurObjet"
+                          },
+                          "parameters": [
+                            "difficulty_dropdown_hard",
+                            "",
+                            "",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Tween::AddObjectOpacityTween"
+                          },
+                          "parameters": [
+                            "hard_dropdown_selected",
+                            "Tween",
+                            "\"hard difficulty hover opacity 0\"",
+                            "0",
+                            "\"linear\"",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
                     }
                   ],
                   "parameters": []
