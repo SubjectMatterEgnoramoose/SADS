@@ -135,15 +135,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "sprites/Man Blue/manBlue_stand_48x48.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\Man Blue\\manBlue_stand_48x48.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "playtestbutton-1.png",
         "kind": "image",
         "metadata": "",
@@ -832,24 +823,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "sprites/people/bbdamian_head.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\people\\bbdamian_head.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "sprites/people/bbdamian_body.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\people\\bbdamian_body.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "sprites/UI/Scores/score_monday_flat.png",
         "kind": "image",
         "metadata": "",
@@ -962,23 +935,6 @@
         "kind": "json",
         "metadata": "",
         "name": "sprites\\tiles\\school_map.json",
-        "userAdded": true
-      },
-      {
-        "disablePreload": false,
-        "file": "Testmap.json",
-        "kind": "json",
-        "metadata": "",
-        "name": "Testmap.json",
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "New_tiles.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "New_tiles.png",
-        "smoothed": true,
         "userAdded": true
       },
       {
@@ -17029,39 +16985,6 @@
                 "includeConfig": 0
               },
               "target": "MondayEvents"
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "DepartScene"
-                  },
-                  "parameters": [
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Monday\"",
-                    "0",
-                    "0"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
             }
           ]
         }
@@ -21469,6 +21392,170 @@
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::ForEach",
+          "object": "FastPathNPC",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "fast_moving_increase_anxiety",
+                "FastPathNPC.X()",
+                "FastPathNPC.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::LinkObjects"
+              },
+              "parameters": [
+                "",
+                "FastPathNPC",
+                "fast_moving_increase_anxiety"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "PathNPC",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "slow_moving_increase_anxiety",
+                "PathNPC.X()",
+                "PathNPC.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::LinkObjects"
+              },
+              "parameters": [
+                "",
+                "PathNPC",
+                "slow_moving_increase_anxiety"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "FastPathNPC",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "fast_moving_increase_anxiety",
+                "FastPathNPC"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "fast_moving_increase_anxiety",
+                "=",
+                "FastPathNPC.X()",
+                "=",
+                "FastPathNPC.Y()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "PathNPC",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "slow_moving_increase_anxiety",
+                "PathNPC"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "slow_moving_increase_anxiety",
+                "=",
+                "PathNPC.X()",
+                "=",
+                "PathNPC.Y()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": true,
+          "type": "BuiltinCommonInstructions::ForEach",
           "object": "PathNPCDestination",
           "conditions": [],
           "actions": [],
@@ -21479,7 +21566,7 @@
               "colorR": 74,
               "creationTime": 0,
               "disabled": false,
-              "folded": false,
+              "folded": true,
               "name": "Normal speed NPC pathfinding",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -22001,7 +22088,7 @@
               "colorR": 74,
               "creationTime": 0,
               "disabled": false,
-              "folded": false,
+              "folded": true,
               "name": "Fast speed NPC pathfinding",
               "source": "",
               "type": "BuiltinCommonInstructions::Group",
@@ -22521,7 +22608,7 @@
         },
         {
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -22717,7 +22804,7 @@
         },
         {
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -22913,7 +23000,7 @@
         },
         {
           "disabled": false,
-          "folded": false,
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -23106,91 +23193,6 @@
               "events": []
             }
           ]
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "slow_moving_increase_anxiety",
-                "PathNPC.X()",
-                "PathNPC.Y()",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "fast_moving_increase_anxiety",
-                "FastPathNPC.X()",
-                "FastPathNPC.Y()",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "slow_moving_increase_anxiety",
-                "=",
-                "PathNPC.X()",
-                "=",
-                "PathNPC.Y()"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MettreXY"
-              },
-              "parameters": [
-                "fast_moving_increase_anxiety",
-                "=",
-                "FastPathNPC.X()",
-                "=",
-                "FastPathNPC.Y()"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
         }
       ]
     },
@@ -25640,7 +25642,7 @@
               },
               "parameters": [
                 "",
-                "lerp(CameraZoom(), 1, 0.25)",
+                "lerp(CameraZoom(), 1, 1)",
                 "\"\"",
                 "0"
               ],
@@ -29505,6 +29507,19 @@
               "parameters": [
                 "",
                 "\"mondayTimer\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"Monday\"",
+                "0",
+                "0"
               ],
               "subInstructions": []
             }
@@ -44121,15 +44136,15 @@
           "name": "PathNPC",
           "persistentUuid": "9fe0b60c-d871-4a5e-828f-9d1b0b3ce3bd",
           "width": 0,
-          "x": 624,
-          "y": 528,
+          "x": 512,
+          "y": 896,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
-          "angle": 180,
+          "angle": 360,
           "customSize": false,
           "height": 0,
           "layer": "",
@@ -44137,8 +44152,8 @@
           "name": "StandingNPC",
           "persistentUuid": "12f9fff7-e6ae-49cd-b760-49e6c101597a",
           "width": 0,
-          "x": 1472,
-          "y": 128,
+          "x": 1536,
+          "y": 0,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -44153,8 +44168,8 @@
           "name": "PathNPCDestination",
           "persistentUuid": "b9e39963-4dcb-42cb-9b19-e9faa3c7fe88",
           "width": 48,
-          "x": 1216,
-          "y": 832,
+          "x": 512,
+          "y": 1088,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -44175,8 +44190,8 @@
           "name": "PathNPCDestination",
           "persistentUuid": "49f26759-6905-48b4-9479-222767d574af",
           "width": 48,
-          "x": 512,
-          "y": 1024,
+          "x": 192,
+          "y": 256,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -44197,8 +44212,8 @@
           "name": "PathNPCDestination",
           "persistentUuid": "2026896f-9f25-4666-9973-7ba0359737e1",
           "width": 48,
-          "x": 320,
-          "y": 384,
+          "x": 768,
+          "y": 64,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -44219,8 +44234,8 @@
           "name": "PathNPCDestination",
           "persistentUuid": "55e816df-bb6a-440d-b21b-b1638069b26d",
           "width": 48,
-          "x": 1024,
-          "y": 384,
+          "x": 1408,
+          "y": 64,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -44234,15 +44249,15 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "height": 64,
           "layer": "",
           "locked": false,
           "name": "standing_increase_anxiety",
           "persistentUuid": "44682c49-2661-4ac7-a90f-4f478e4f14ee",
-          "width": 0,
-          "x": 1472,
-          "y": 128,
+          "width": 64,
+          "x": 1536,
+          "y": 0,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -44257,8 +44272,8 @@
           "name": "FastPathNPC",
           "persistentUuid": "8c1c751c-3ff1-4f2e-9076-777d7d7ce9ae",
           "width": 0,
-          "x": 384,
-          "y": 336,
+          "x": 1024,
+          "y": 128,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -44724,6 +44739,54 @@
           "x": 0,
           "y": 0,
           "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPC",
+          "persistentUuid": "94bbea55-ede8-4328-a7e3-6f51714e14de",
+          "width": 0,
+          "x": 624,
+          "y": 528,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "PathNPC",
+          "persistentUuid": "5e35f296-08d3-45d3-8dcc-23c2b101c134",
+          "width": 0,
+          "x": 192,
+          "y": 448,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "FastPathNPC",
+          "persistentUuid": "79c4c007-3ed0-4553-afa2-625079ce52cb",
+          "width": 0,
+          "x": 384,
+          "y": 336,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
